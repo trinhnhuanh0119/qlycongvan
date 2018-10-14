@@ -1,0 +1,14 @@
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\webAPI.deps.json
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\webAPI.runtimeconfig.json
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\webAPI.runtimeconfig.dev.json
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\webAPI.dll
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.csprojAssemblyReference.cache
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.csproj.CoreCompileInputs.cache
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.RazorAssemblyInfo.cache
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.RazorAssemblyInfo.cs
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.AssemblyInfoInputs.cache
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.AssemblyInfo.cs
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.RazorTargetAssemblyInfo.cache
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\webAPI.pdb
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.dll
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.pdb
