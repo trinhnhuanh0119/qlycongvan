@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.1": {
       "webAPI/1.0.0": {
         "dependencies": {
+          "DataAccess": "1.0.0",
           "Microsoft.AspNet.WebApi.Core": "5.2.6",
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.NETCore.App": "2.1.0",
@@ -606,6 +607,34 @@
           "lib/netcoreapp2.0/Unity.Interception.dll": {},
           "lib/netcoreapp2.0/Unity.RegistrationByConvention.dll": {},
           "lib/netcoreapp2.0/Unity.ServiceLocation.dll": {}
+        }
+      },
+      "DataAccess/1.0.0": {
+        "dependencies": {
+          "Dapper": "1.50.5.0",
+          "EntityFramework": "6.0.0.0"
+        },
+        "runtime": {
+          "DataAccess.dll": {}
+        },
+        "compile": {
+          "DataAccess.dll": {}
+        }
+      },
+      "Dapper.Reference/1.50.5.0": {
+        "runtime": {
+          "Dapper.dll": {
+            "assemblyVersion": "1.50.5.0",
+            "fileVersion": "1.50.5.0"
+          }
+        }
+      },
+      "EntityFramework.Reference/6.0.0.0": {
+        "runtime": {
+          "EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.61023.0"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3761,6 +3790,21 @@
       "sha512": "sha512-C9LCcDvwJBXDx/A3Tlc5AUGfEv9WWAk8ZL+OwK7vrS3tqImlRpw+sFNY4nyzkdPMyyuwpYG4Jov3PHvhFJyNdw==",
       "path": "unity/5.8.11",
       "hashPath": "unity.5.8.11.nupkg.sha512"
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Dapper.Reference/1.50.5.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework.Reference/6.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

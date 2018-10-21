@@ -4681,6 +4681,15 @@
           "lib/netcoreapp2.0/Unity.RegistrationByConvention.dll": {},
           "lib/netcoreapp2.0/Unity.ServiceLocation.dll": {}
         }
+      },
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
+        }
       }
     }
   },
@@ -12487,10 +12496,16 @@
         "unity.5.8.11.nupkg.sha512",
         "unity.nuspec"
       ]
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess/DataAccess.csproj",
+      "msbuildProject": "../DataAccess/DataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "DataAccess >= 1.0.0",
       "Microsoft.AspNet.WebApi.Core >= 5.2.6",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
@@ -12530,7 +12545,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Asp.net Core\\Github\\qlycongvan\\DataAccess\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "E:\\Asp.net Core\\Github\\qlycongvan\\DataAccess\\DataAccess\\DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

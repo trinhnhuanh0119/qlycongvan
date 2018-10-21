@@ -37,12 +37,21 @@
     <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,20 +82,66 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="Entities\CapSo.cs" />
+    <Compile Include="Entities\CCQBH.cs" />
+    <Compile Include="Entities\CQBH.cs" />
+    <Compile Include="Entities\CV_Den.cs" />
+    <Compile Include="Entities\CV_Di.cs" />
+    <Compile Include="Entities\DoKhan.cs" />
+    <Compile Include="Entities\DoMat.cs" />
+    <Compile Include="Entities\DV.cs" />
+    <Compile Include="Entities\KhoLuuTru.cs" />
+    <Compile Include="Entities\LoaiBQ.cs" />
+    <Compile Include="Entities\LuuTru.cs" />
+    <Compile Include="Entities\LVB.cs" />
+    <Compile Include="Entities\Menu.cs" />
+    <Compile Include="Entities\NBH.cs" />
+    <Compile Include="Entities\NND.cs" />
+    <Compile Include="Entities\NNVB.cs" />
+    <Compile Include="Entities\Phong.cs" />
+    <Compile Include="Entities\QuanLyCongVan.cs" />
+    <Compile Include="Entities\SVB.cs" />
+    <Compile Include="Entities\TDK.cs" />
+    <Compile Include="Entities\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\ConnectionFactory.cs" />
     <Compile Include="Infrastructure\IConnectionFactory.cs" />
+    <Compile Include="Repositories\CapSoRepository.cs" />
+    <Compile Include="Repositories\CCQBHRepository.cs" />
+    <Compile Include="Repositories\CQBHRepository.cs" />
+    <Compile Include="Repositories\CV_DiRepository.cs" />
+    <Compile Include="Repositories\DoKhanRepository.cs" />
+    <Compile Include="Repositories\DoMatRepository.cs" />
+    <Compile Include="Repositories\DVRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\ICapSoRepository.cs" />
+    <Compile Include="Repositories\ICQBHRepository.cs" />
+    <Compile Include="Repositories\ICCQBHRepository.cs" />
+    <Compile Include="Repositories\ICV_DiRepository.cs" />
+    <Compile Include="Repositories\IDoKhanRepository.cs" />
+    <Compile Include="Repositories\IDoMatRepository.cs" />
+    <Compile Include="Repositories\IDVRepository.cs" />
     <Compile Include="Repositories\IGenericRepository.cs" />
-    <Compile Include="Services\BlogService.cs" />
-    <Compile Include="Services\IBlogService.cs" />
+    <Compile Include="Services\CapSoService.cs" />
+    <Compile Include="Services\CCQBHService.cs" />
+    <Compile Include="Services\CQBHService.cs" />
+    <Compile Include="Services\CV_DiService.cs" />
+    <Compile Include="Services\DoKhanService.cs" />
+    <Compile Include="Services\DoMatService.cs" />
+    <Compile Include="Services\DVService.cs" />
+    <Compile Include="Services\ICapSoService.cs" />
+    <Compile Include="Services\ICCQBHService.cs" />
+    <Compile Include="Services\ICQBHService.cs" />
+    <Compile Include="Services\ICV_DiService.cs" />
+    <Compile Include="Services\IDoKhanService.cs" />
+    <Compile Include="Services\IDoMatService.cs" />
+    <Compile Include="Services\IDVService.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

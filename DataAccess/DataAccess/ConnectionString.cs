@@ -9,6 +9,6 @@ namespace DataAccess
     public class ConnectionString
     {
         //Sửa đường dẫn đến Database
-        public static string ConnectionStrings = "";
+        public static string ConnectionStrings = "Server=CUONG;Database=QLyCV_DNU;Persist Security Info=True;User ID=sa;Password=123456;";
     }
 }

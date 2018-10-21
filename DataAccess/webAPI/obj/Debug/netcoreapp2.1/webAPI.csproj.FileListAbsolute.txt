@@ -12,3 +12,11 @@ E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webA
 E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\webAPI.pdb
 E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.dll
 E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.pdb
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\DataAccess.dll
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\Dapper.dll
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\EntityFramework.dll
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\DataAccess.pdb
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\DataAccess.dll.config
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\Dapper.xml
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\bin\Debug\netcoreapp2.1\EntityFramework.xml
+E:\Asp.net Core\Github\qlycongvan\DataAccess\webAPI\obj\Debug\netcoreapp2.1\webAPI.csproj.CopyComplete
