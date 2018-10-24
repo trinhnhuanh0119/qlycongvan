@@ -24,6 +24,18 @@ namespace webAPI
             container.RegisterType<IDoKhanRepository, DoKhanRepository>();
             container.RegisterType<IDoMatRepository, DoMatRepository>();
             container.RegisterType<IDVRepository, DVRepository>();
+            container.RegisterType<IKhoLuuTruRepository, KhoLuuTruRepository>();
+            container.RegisterType<ILoaiBQRepository, LoaiBQRepository>();
+            container.RegisterType<ILuuTruRepository, LuuTruRepository>();
+            container.RegisterType<ILVBRepository, LVBRepository>();
+            container.RegisterType<IMenuRepository, MenuRepository>();
+            container.RegisterType<INBHRepository, NBHRepository>();
+            container.RegisterType<INNDRepository, NNDRepository>();
+            container.RegisterType<INNVBRepository, NNVBRepository>();
+            container.RegisterType<IPhongRepository, PhongRepository>();
+            container.RegisterType<ISVBRepository, SVBRepository>();
+            container.RegisterType<ITDKRepository, TDKRepository>();
+            container.RegisterType<IUsersRepository, UsersRepository>();
             container.RegisterType<IConnectionFactory, ConnectionFactory>();
             container.RegisterType<IUnitOfWork, UnitOfWork>();
             container.RegisterType<ICCQBHService, CCQBHService>();
@@ -33,6 +45,18 @@ namespace webAPI
             container.RegisterType<DoKhanService, DoKhanService>();
             container.RegisterType<IDoMatService, DoMatService>();
             container.RegisterType<IDVService, DVService>();
+            container.RegisterType<IKhoLuuTruService, KhoLuuTruService>();
+            container.RegisterType<ILoaiBQService, LoaiBQService>();
+            container.RegisterType<ILuuTruService, LuuTruService>();
+            container.RegisterType<ILVBService, LVBService>();
+            container.RegisterType<IMenuService, MenuService>();
+            container.RegisterType<INBHService, NBHService>();
+            container.RegisterType<INNDService, NNDService>();
+            container.RegisterType<INNVBService, NNVBService>();
+            container.RegisterType<IPhongService, PhongService>();
+            container.RegisterType<ISVBService, SVBService>();
+            container.RegisterType<ITDKService, TDKService>();
+            container.RegisterType<IUsersService, UsersService>();
             config.DependencyResolver = new UnityResolver(container);
             
 

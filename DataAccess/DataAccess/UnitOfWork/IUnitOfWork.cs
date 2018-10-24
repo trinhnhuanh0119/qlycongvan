@@ -16,6 +16,18 @@ namespace DataAccess.UnitOfWork
         IDoKhanRepository DoKhanRepository { get; }
         IDoMatRepository DoMatRepository { get; }
         IDVRepository    DVRepository { get; }
+        IKhoLuuTruRepository KhoLuuTruRepository { get; }
+        ILoaiBQRepository LoaiBQRepository { get; }
+        ILuuTruRepository LuuTruRepository { get; }
+        ILVBRepository LVBRepository { get; }
+        IMenuRepository MenuRepository { get; }
+        INBHRepository NBHRepository { get; }
+        INNDRepository NNDRepository { get; }
+        INNVBRepository NNVBRepository { get; }
+        IPhongRepository PhongRepository { get; }
+        ISVBRepository SVBRepository { get; }
+        ITDKRepository TDKRepository { get; }
+        IUsersRepository UsersRepository { get; }
         void Complete();
     }
 }
