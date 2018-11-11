@@ -1,0 +1,11 @@
+E:\Github\QuanLyCongVan\QuanLyCongVan\bin\Debug\netcoreapp2.1\QuanLyCongVan.deps.json
+E:\Github\QuanLyCongVan\QuanLyCongVan\bin\Debug\netcoreapp2.1\QuanLyCongVan.runtimeconfig.json
+E:\Github\QuanLyCongVan\QuanLyCongVan\bin\Debug\netcoreapp2.1\QuanLyCongVan.runtimeconfig.dev.json
+E:\Github\QuanLyCongVan\QuanLyCongVan\bin\Debug\netcoreapp2.1\QuanLyCongVan.dll
+E:\Github\QuanLyCongVan\QuanLyCongVan\obj\Debug\netcoreapp2.1\QuanLyCongVan.csprojAssemblyReference.cache
+E:\Github\QuanLyCongVan\QuanLyCongVan\obj\Debug\netcoreapp2.1\QuanLyCongVan.csproj.CoreCompileInputs.cache
+E:\Github\QuanLyCongVan\QuanLyCongVan\obj\Debug\netcoreapp2.1\QuanLyCongVan.RazorAssemblyInfo.cache
+E:\Github\QuanLyCongVan\QuanLyCongVan\obj\Debug\netcoreapp2.1\QuanLyCongVan.RazorAssemblyInfo.cs
+E:\Github\QuanLyCongVan\QuanLyCongVan\obj\Debug\netcoreapp2.1\QuanLyCongVan.AssemblyInfoInputs.cache
+E:\Github\QuanLyCongVan\QuanLyCongVan\obj\Debug\netcoreapp2.1\QuanLyCongVan.AssemblyInfo.cs
+E:\Github\QuanLyCongVan\QuanLyCongVan\obj\Debug\netcoreapp2.1\QuanLyCongVan.RazorTargetAssemblyInfo.cache
