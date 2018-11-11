@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         DoKhanRepository dokhanRepo = new DoKhanRepository();
         public ActionResult Index()
         {
-            var listCategory = dokhanRepo.GetAll();
-            return View(listCategory);
+            var listDoKhan = dokhanRepo.GetAll();
+            return View(listDoKhan);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = dokhanRepo.GetById(id);
-            return View(category);
+            var dokhan = dokhanRepo.GetById(id);
+            return View(dokhan);
         }
 
         [HttpPost]

@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         DoMatRepository domatRepo = new DoMatRepository();
         public ActionResult Index()
         {
-            var listCategory = domatRepo.GetAll();
-            return View(listCategory);
+            var listDoMat = domatRepo.GetAll();
+            return View(listDoMat);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = domatRepo.GetById(id);
-            return View(category);
+            var domat = domatRepo.GetById(id);
+            return View(domat);
         }
 
         [HttpPost]

@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         CapCqbhRepository capcqbhRepo= new CapCqbhRepository();
         public ActionResult Index()
         {
-            var listCategory = capcqbhRepo.GetAll();
-            return View(listCategory);
+            var listCapCqbh = capcqbhRepo.GetAll();
+            return View(listCapCqbh);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = capcqbhRepo.GetById(id);
-            return View(category);
+            var capcqbh = capcqbhRepo.GetById(id);
+            return View(capcqbh);
         }
 
         [HttpPost]

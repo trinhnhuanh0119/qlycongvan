@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         CqbhRepository cqbhRepo = new CqbhRepository();
         public ActionResult Index()
         {
-            var listCategory = cqbhRepo.GetAll();
-            return View(listCategory);
+            var listCqbh = cqbhRepo.GetAll();
+            return View(listCqbh);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = cqbhRepo.GetById(id);
-            return View(category);
+            var cqbh = cqbhRepo.GetById(id);
+            return View(cqbh);
         }
 
         [HttpPost]

@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         LoaiVanBanRepository loaivanbanRepo = new LoaiVanBanRepository();
         public ActionResult Index()
         {
-            var listCategory = loaivanbanRepo.GetAll();
-            return View(listCategory);
+            var listLoaiVanBan = loaivanbanRepo.GetAll();
+            return View(listLoaiVanBan);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = loaivanbanRepo.GetById(id);
-            return View(category);
+            var loaivanban = loaivanbanRepo.GetById(id);
+            return View(loaivanban);
         }
 
         [HttpPost]

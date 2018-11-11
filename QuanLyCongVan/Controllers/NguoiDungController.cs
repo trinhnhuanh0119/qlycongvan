@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         NguoiDungRepository nguoidungRepo = new NguoiDungRepository();
         public ActionResult Index()
         {
-            var listCategory = nguoidungRepo.GetAll();
-            return View(listCategory);
+            var listNguoiDung = nguoidungRepo.GetAll();
+            return View(listNguoiDung);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = nguoidungRepo.GetById(id);
-            return View(category);
+            var nguoidung = nguoidungRepo.GetById(id);
+            return View(nguoidung);
         }
 
         [HttpPost]

@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         NhanSuRepository nhansuRepo = new NhanSuRepository();
         public ActionResult Index()
         {
-            var listCategory = nhansuRepo.GetAll();
-            return View(listCategory);
+            var listNhanSu = nhansuRepo.GetAll();
+            return View(listNhanSu);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = nhansuRepo.GetById(id);
-            return View(category);
+            var nhansu = nhansuRepo.GetById(id);
+            return View(nhansu);
         }
 
         [HttpPost]

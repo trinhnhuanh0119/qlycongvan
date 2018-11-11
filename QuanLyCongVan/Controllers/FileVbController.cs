@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         FileVbRepository filevbRepo = new FileVbRepository();
         public ActionResult Index()
         {
-            var listCategory = filevbRepo.GetAll();
-            return View(listCategory);
+            var listFileVb = filevbRepo.GetAll();
+            return View(listFileVb);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = filevbRepo.GetById(id);
-            return View(category);
+            var filevb = filevbRepo.GetById(id);
+            return View(filevb);
         }
 
         [HttpPost]

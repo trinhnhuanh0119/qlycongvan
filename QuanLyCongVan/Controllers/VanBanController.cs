@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         VanBanRepository vanbanRepo = new VanBanRepository();
         public ActionResult Index()
         {
-            var listCategory = vanbanRepo.GetAll();
-            return View(listCategory);
+            var listVanBan = vanbanRepo.GetAll();
+            return View(listVanBan);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = vanbanRepo.GetById(id);
-            return View(category);
+            var vanban = vanbanRepo.GetById(id);
+            return View(vanban);
         }
 
         [HttpPost]

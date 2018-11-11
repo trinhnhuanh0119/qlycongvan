@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         ChucVuRepository chucvuRepo = new ChucVuRepository();
         public ActionResult Index()
         {
-            var listCategory = chucvuRepo.GetAll();
-            return View(listCategory);
+            var listChucVu = chucvuRepo.GetAll();
+            return View(listChucVu);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = chucvuRepo.GetById(id);
-            return View(category);
+            var chucvu = chucvuRepo.GetById(id);
+            return View(chucvu);
         }
 
         [HttpPost]

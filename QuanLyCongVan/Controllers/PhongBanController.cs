@@ -13,8 +13,8 @@ namespace QuanLyCongVan.Controllers
         PhongBanRepository phongbanRepo = new PhongBanRepository();
         public ActionResult Index()
         {
-            var listCategory = phongbanRepo.GetAll();
-            return View(listCategory);
+            var listPhongBan = phongbanRepo.GetAll();
+            return View(listPhongBan);
         }
 
         [HttpGet]
@@ -44,8 +44,8 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = phongbanRepo.GetById(id);
-            return View(category);
+            var phongban = phongbanRepo.GetById(id);
+            return View(phongban);
         }
 
         [HttpPost]
