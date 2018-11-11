@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Github\\QuanLyCongVan\\QuanLyCongVan.IRepository\\QuanLyCongVan.IRepository.csproj",
+      "projectUniqueName": "E:\\Github\\QuanLyCongVan\\qlycongvan\\QuanLyCongVan.IRepository\\QuanLyCongVan.IRepository.csproj",
       "projectName": "QuanLyCongVan.IRepository",
-      "projectPath": "E:\\Github\\QuanLyCongVan\\QuanLyCongVan.IRepository\\QuanLyCongVan.IRepository.csproj",
+      "projectPath": "E:\\Github\\QuanLyCongVan\\qlycongvan\\QuanLyCongVan.IRepository\\QuanLyCongVan.IRepository.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "E:\\Github\\QuanLyCongVan\\QuanLyCongVan.IRepository\\obj\\",
+      "outputPath": "E:\\Github\\QuanLyCongVan\\qlycongvan\\QuanLyCongVan.IRepository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,0 +1,11 @@
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.deps.json
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.dll
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.pdb
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.csprojAssemblyReference.cache
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.csproj.CoreCompileInputs.cache
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.AssemblyInfoInputs.cache
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.AssemblyInfo.cs
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.dll
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.pdb
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.runtimeconfig.json
+E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.runtimeconfig.dev.json
