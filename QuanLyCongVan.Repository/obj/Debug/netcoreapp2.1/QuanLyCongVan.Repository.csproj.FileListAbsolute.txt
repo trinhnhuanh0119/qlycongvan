@@ -12,3 +12,17 @@ E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Repository\bin\Debug\netcoreapp
 E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.IRepository.pdb
 E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.pdb
 E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.csproj.CopyComplete
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Repository.deps.json
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Repository.dll
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Repository.pdb
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.IRepository.dll
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.dll
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.IRepository.pdb
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.pdb
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.csprojAssemblyReference.cache
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.AssemblyInfoInputs.cache
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.AssemblyInfo.cs
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.csproj.CopyComplete
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.dll
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.pdb

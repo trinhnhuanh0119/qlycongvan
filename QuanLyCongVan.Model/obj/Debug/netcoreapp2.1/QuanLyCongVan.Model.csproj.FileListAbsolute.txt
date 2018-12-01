@@ -9,3 +9,14 @@ E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\Q
 E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.pdb
 E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.runtimeconfig.json
 E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.runtimeconfig.dev.json
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.deps.json
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.runtimeconfig.json
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.runtimeconfig.dev.json
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.dll
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.pdb
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.csprojAssemblyReference.cache
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.AssemblyInfoInputs.cache
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.AssemblyInfo.cs
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.dll
+C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.Model\obj\Debug\netcoreapp2.1\QuanLyCongVan.Model.pdb
