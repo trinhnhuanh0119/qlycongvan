@@ -15,6 +15,9 @@ namespace QuanLyCongVan
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddCors();
+
             services.AddMvc().AddRazorPagesOptions(options =>
             {
                 options.Conventions.AddPageRoute("/Home/Index", "");
@@ -29,10 +32,13 @@ namespace QuanLyCongVan
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
+            app.UseCors(
+             options => options.WithOrigins("*")
+                         .AllowAnyOrigin()
+                         .AllowAnyHeader()
+                         .AllowAnyMethod()
+                         .AllowCredentials()
+                    );
 
             app.UseStaticFiles();
             app.UseMvc(routes =>

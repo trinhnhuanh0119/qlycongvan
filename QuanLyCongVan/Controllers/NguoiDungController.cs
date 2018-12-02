@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using QuanLyCongVan.Model.Models;
 using QuanLyCongVan.Repository;
+using QuanLyCongVan.Repository.Object;
 
 namespace QuanLyCongVan.Controllers
 {
@@ -77,6 +78,11 @@ namespace QuanLyCongVan.Controllers
                 ModelState.AddModelError(string.Empty, ex.Message);
             }
             return RedirectToAction("index");
+        }
+        [HttpPost]
+        public JsonResult getAllSearch([FromBody]NguoiDungTableGridRequest request)
+        {
+            return Json(nguoidungRepo.GetAll(request));
         }
     }
 }

@@ -2,7 +2,9 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/_Layout.cshtml";
 }
-<div class="main-container ace-save-state" id="main-container">
+
+<script src="~/ScriptController/CapcqbhScriptController.js"></script>
+<div class="main-container ace-save-state" id="main-container" ng-controller="CapcqbhJS">
 
     <div class="main-content">
         <div class="main-content-inner">
@@ -16,7 +18,7 @@
                     <li>
                         <a href="#">Trang hiện tại</a>
                     </li>
-                    <li class="active">Thêm mới chức vụ</li>
+                    <li class="active">Thêm mới cấp cơ quan ban hành</li>
                 </ul><!-- /.breadcrumb -->
 
                 <div class="nav-search" id="nav-search">
@@ -34,12 +36,12 @@
                     <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
                         <i class="ace-icon fa fa-cog bigger-130"></i>
                     </div>
-
+                    <button class="btn btn-sm btn-primary" data-target="#confirm-status" data-toggle="modal">test</button>
                     <div class="ace-settings-box clearfix" id="ace-settings-box">
                         <div class="pull-left width-50">
                             <div class="ace-settings-item">
                                 <div class="pull-left">
-                                    <select id="skin-colorpicker" class="hide">
+                                    <select id="skin-colorpicker" ng-model="Option" ng-change="ShowValue()" class="hide">
                                         <option data-skin="no-skin" value="#438EB9">#438EB9</option>
                                         <option data-skin="skin-1" value="#222A2D">#222A2D</option>
                                         <option data-skin="skin-2" value="#C6487E">#C6487E</option>
@@ -119,7 +121,18 @@
                             Please note that demo server is not configured to save the changes, therefore you may see an error message.
                         </div>
 
-                        <table id="grid-table"></table>
+                        <table class="table table-responsive" id="grid-table">
+                            <tr>
+                                <th>Mã </th>
+                                <th>Tên </th>
+                                <th>Ghi chú</th>
+                            </tr>
+                            <tr ng-repeat="sp in datagrid">
+                                <td>{{sp.maCapCQBH}} </td>
+                                <td>{{sp.tenCapCQBH}} </td>
+                                <td> {{sp.ghiChu}}</td>
+                            </tr>
+                        </table>
 
                         <div id="grid-pager"></div>
 
@@ -129,4 +142,34 @@
             </div><!-- /.page-content -->
         </div>
     </div>
+
+
+    @*Modal hển thị*@
+    <div class="modal fade" id="confirm-status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm dv-modal">
+            <div class="modal-content modal-xoa">
+                <div class="tab-content tab-content_xoa">
+                    <div class="modal-header no-padding widget-header-small">
+                        <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
+                        <p class="title-ct uppercase no-margin"><i class="ace-icon fa fa-exclamation-triangle red"></i>Thông báo</p>
+                        <p>
+                            {{texttoShow}}
+                        </p>
+                    </div>
+                    <div class="modal-body">
+                        <span>
+                            Bạn có chắc chắn muốn: <strong class="red"></strong>?
+                        </span>
+                    </div>
+                    <div class="modal-footer no-border">
+                        <a class="btn btn-danger btn-xs btn-ok" ng-click="test1()"><i class="fa fa-check-square-o"></i> Có</a>
+                        <a class="btn btn-xs btn-info" data-dismiss="modal"><i class="fa fa-times-circle"></i> Không</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div><!-- /.main-content -->
+
+
+

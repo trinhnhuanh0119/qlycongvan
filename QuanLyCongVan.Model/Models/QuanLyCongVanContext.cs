@@ -33,7 +33,7 @@ namespace QuanLyCongVan.Model.Models
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=DESKTOP-SLNDDHO\\SQL3;Database=QuanLyCongVan;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=Bon;Database=QuanLyCongVan;Trusted_Connection=True;");
             }
         }
 
@@ -110,9 +110,9 @@ namespace QuanLyCongVan.Model.Models
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.DoKhan1)
+                entity.Property(e => e.TenDoKhan)
                     .IsRequired()
-                    .HasColumnName("DoKhan")
+                    .HasColumnName("TenDoKhan")
                     .HasMaxLength(50);
 
                 entity.Property(e => e.GhiChu).HasMaxLength(200);
@@ -122,9 +122,9 @@ namespace QuanLyCongVan.Model.Models
             {
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.DoMat1)
+                entity.Property(e => e.TenDoMat)
                     .IsRequired()
-                    .HasColumnName("DoMat")
+                    .HasColumnName("TenDoMat")
                     .HasMaxLength(50);
 
                 entity.Property(e => e.GhiChu).HasMaxLength(200);

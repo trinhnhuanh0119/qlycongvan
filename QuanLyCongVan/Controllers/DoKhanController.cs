@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using QuanLyCongVan.Model.Models;
 using QuanLyCongVan.Repository;
+using QuanLyCongVan.Repository.Object;
+using System;
+using System.Collections.Generic;
 
 namespace QuanLyCongVan.Controllers
 {
+    
     public class DoKhanController : Controller
     {
-        DoKhanRepository dokhanRepo = new DoKhanRepository();
+        private DoKhanRepository dokhanRepo = new DoKhanRepository();
         public ActionResult Index()
         {
-            var listDoKhan = dokhanRepo.GetAll();
+            IEnumerable<DoKhan> listDoKhan = dokhanRepo.GetAll();
             return View(listDoKhan);
         }
 
@@ -44,7 +45,7 @@ namespace QuanLyCongVan.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var dokhan = dokhanRepo.GetById(id);
+            DoKhan dokhan = dokhanRepo.GetById(id);
             return View(dokhan);
         }
 
@@ -77,6 +78,12 @@ namespace QuanLyCongVan.Controllers
                 ModelState.AddModelError(string.Empty, ex.Message);
             }
             return RedirectToAction("index");
+        }
+
+        [HttpPost]
+        public JsonResult getAllSearch([FromBody]DoKhanTableGridRequest request)
+        { 
+            return Json(dokhanRepo.GetAll(request));
         }
     }
 }

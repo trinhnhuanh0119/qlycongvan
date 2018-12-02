@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\QuanLyCongVan.IRepository\QuanLyCongVan.IRepository.csproj" />
     <ProjectReference Include="..\QuanLyCongVan.Model\QuanLyCongVan.Model.csproj" />
   </ItemGroup>
