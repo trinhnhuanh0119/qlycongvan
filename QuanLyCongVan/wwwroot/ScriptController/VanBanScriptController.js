@@ -1,12 +1,23 @@
-﻿myApp.controller("LoaiVanBanJS",
+﻿myApp.controller("VanBanJS",
     function ($location, $scope, $routeParams, $http, $window, $timeout) {
 
         $scope.datagrid = [];
         $scope.SearchObject = {
+            VBDiDen: -1,
             MaLoaiVB: '',
-            TenLoaiVB:'',
-            TenVietTat: '',
-            KieuVanBan: -1,
+            MaCQBH: '',
+            SoVB: '',
+            SoDen: '',
+            NgayDen: '',
+            DoMat: '',
+            DoKhan: '',
+            TrichYeu: '',
+            NoiNhan: '',
+            NgayKy: '',
+            NguoiKy: '',
+            KetQuaXuLy: -1,
+            FileDinhKem:-1,
+            HanXuLy: '',
             PageIndex: 1,
             PageSize: 10
         };
@@ -14,7 +25,7 @@
         var GetData = function () {
             $http({
                 method: 'POST',
-                url: '/LoaiVanBan/getAllSearch',
+                url: '/VanBan/getAllSearch',
                 data: JSON.stringify($scope.SearchObject),
                 dataType: "json"
 

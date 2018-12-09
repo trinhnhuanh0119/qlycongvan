@@ -5,7 +5,7 @@
         $scope.SearchObject = {
             TenTaiKhoai: '',
             MatKhau:'',
-            KichHoat: '',
+            KichHoat: -1,
             MaNhanSu:'',
             PageIndex: 1,
             PageSize: 10

@@ -3,8 +3,8 @@
     Layout = "~/Views/_Layout.cshtml";
 }
 
-<script src="~/ScriptController/CapcqbhScriptController.js"></script>
-<div class="main-container ace-save-state" id="main-container" ng-controller="CapcqbhJS">
+<script src="~/ScriptController/NhanSuScriptController.js"></script>
+<div class="main-container ace-save-state" id="main-container" ng-controller="NhanSuJS">
 
     <div class="main-content">
         <div class="main-content-inner">
@@ -125,7 +125,6 @@
                             <tr>
                                 <th>Mã </th>
                                 <th>Tên</th>
-                                <th>Tên viết tắt</th>
                                 <th>Giới tính</th>
                                 <th>Ngày sinh</th>
                                 <th>Ảnh</th>
@@ -135,18 +134,16 @@
                                 <th>Điện thoại</th>
                                 <th>Mã phòng</th>
                             </tr>
-                            <tr>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
+                            <tr ng-repeat="sp in datagrid">
+                                <td>{{sp.maNhanSu}} </td>
+                                <td>{{sp.ten}} </td>
+                                <td>{{sp.gioiTinh}}</td>
+                                <td>{{sp.anh}} </td>
+                                <td>{{sp.ngayVaoNganh}} </td>
+                                <td>{{sp.diaChiNR}} </td>
+                                <td>{{sp.diaChiCQ}} </td>
+                                <td>{{sp.dienThoai}} </td>
+                                <td>{{sp.maPhong}} </td>
                             </tr>
                         </table>
 

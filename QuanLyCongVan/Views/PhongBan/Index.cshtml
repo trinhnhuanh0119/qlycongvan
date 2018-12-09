@@ -3,8 +3,8 @@
     Layout = "~/Views/_Layout.cshtml";
 }
 
-<script src="~/ScriptController/CapcqbhScriptController.js"></script>
-<div class="main-container ace-save-state" id="main-container" ng-controller="CapcqbhJS">
+<script src="~/ScriptController/PhongBanScriptController.js"></script>
+<div class="main-container ace-save-state" id="main-container" ng-controller="PhongBanJS">
 
     <div class="main-content">
         <div class="main-content-inner">
@@ -129,12 +129,12 @@
                                 <th>Fax</th>
                                 <th>Mã nhân sự</th>
                             </tr>
-                            <tr>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
+                            <tr ng-repeat="sp in datagrid">
+                                <td>{{sp.maPhong}} </td>
+                                <td>{{sp.tenPhong}} </td>
+                                <td>{{sp.dienThoai}} </td>
+                                <td>{{sp.fax}} </td>
+                                <td>{{sp.maNhanSu}} </td>
                             </tr>
                         </table>
 

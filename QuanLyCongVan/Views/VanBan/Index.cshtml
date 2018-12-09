@@ -3,8 +3,8 @@
     Layout = "~/Views/_Layout.cshtml";
 }
 
-<script src="~/ScriptController/CapcqbhScriptController.js"></script>
-<div class="main-container ace-save-state" id="main-container" ng-controller="CapcqbhJS">
+<script src="~/ScriptController/VanBanScriptController.js"></script>
+<div class="main-container ace-save-state" id="main-container" ng-controller="VanBanJS">
 
     <div class="main-content">
         <div class="main-content-inner">
@@ -139,22 +139,22 @@
                                 <th>File đính kèm</th>
                                 <th>Hạn xử lý</th>
                             </tr>
-                            <tr>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
+                            <tr ng-repeat="">
+                                <td>{{sp.vanBanDiDen}} </td>
+                                <td>{{sp.maLoaiVanBan}} </td>
+                                <td>{{sp.maCQBH}} </td>
+                                <td>{{sp.soVB}} </td>
+                                <td>{{sp.soDen}} </td>
+                                <td>{{sp.ngayDen}} </td>
+                                <td>{{sp.doMat}} </td>
+                                <td>{{sp.doKhan}} </td>
+                                <td>{{sp.trichYeu}} </td>
+                                <td>{{sp.noiNhan}} </td>
+                                <td>{{sp.ngayKy}} </td>
+                                <td>{{sp.nguoiKy}} </td>
+                                <td>{{sp.ketQuaXuLy}} </td>
+                                <td> {{sp.fileDinhKem}}</td>
+                                <td>{{sp.hanXuLy}} </td>
                             </tr>
                         </table>
 

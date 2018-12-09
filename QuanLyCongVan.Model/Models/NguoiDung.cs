@@ -8,7 +8,7 @@ namespace QuanLyCongVan.Model.Models
         public int Id { get; set; }
         public string TenTaiKhoan { get; set; }
         public string MatKhau { get; set; }
-        public bool? KichHoat { get; set; }
+        public int KichHoat { get; set; }
         public string MaNhanSu { get; set; }
     }
 }

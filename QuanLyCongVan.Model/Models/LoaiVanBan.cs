@@ -9,7 +9,7 @@ namespace QuanLyCongVan.Model.Models
         public string MaLoaiVb { get; set; }
         public string TenLoaiVb { get; set; }
         public string TenVietTat { get; set; }
-        public bool? Di { get; set; }
-        public bool? Den { get; set; }
+        public byte KieuVanBan{ get; set; }
+        
     }
 }

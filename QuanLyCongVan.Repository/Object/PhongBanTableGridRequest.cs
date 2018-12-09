@@ -4,12 +4,12 @@ using System.Text;
 
 namespace QuanLyCongVan.Repository.Object
 {
-    public class NguoiDungTableGridRequest
+   public class PhongBanTableGridRequest
     {
-        public int Id { get; set; }
-        public string TenTaiKhoan { get; set; }
-        public string MatKhau { get; set; }
-        public int KichHoat { get; set; }
+        public string MaPhong { get; set; }
+        public string TenPhong { get; set; }
+        public string DienThoai { get; set; }
+        public string Fax { get; set; }
         public string MaNhanSu { get; set; }
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
