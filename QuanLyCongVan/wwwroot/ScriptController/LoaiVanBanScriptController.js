@@ -11,6 +11,14 @@
             PageSize: 10
         };
 
+        $scope.model = {
+            Id: 0,
+            MaLoaiVb: 0,
+            TenLoaiVb: '',
+            TenVietTat: '',
+            KieuVanBan: -1
+        };
+
         var GetData = function () {
             $http({
                 method: 'POST',
@@ -36,4 +44,20 @@
         }
         ngInit();
 
+        $scope.onCreate = function () {
+            $http({
+                method: 'POST',
+                url: '/LoaiVanBan/Create',
+                data: JSON.stringify($scope.model),
+                dataType: "json"
+
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                console.log(response);
+                $scope.model = response.data;
+
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
     });

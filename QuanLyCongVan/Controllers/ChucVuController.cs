@@ -17,22 +17,15 @@ namespace QuanLyCongVan.Controllers
             var listChucVu = chucvuRepo.GetAll();
             return View(listChucVu);
         }
-
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(ChucVu c)
+        public ActionResult Create([FromBody]ChucVu c)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     chucvuRepo.Create(c);
-                    return RedirectToAction("index");
+                    return Json(c);
                 }
             }
             catch (Exception ex)

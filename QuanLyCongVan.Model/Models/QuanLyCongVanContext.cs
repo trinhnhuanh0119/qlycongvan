@@ -186,7 +186,6 @@ namespace QuanLyCongVan.Model.Models
                 entity.Property(e => e.Anh).HasMaxLength(50);
 
                 entity.Property(e => e.Dem)
-                    .IsRequired()
                     .HasMaxLength(50);
 
                 entity.Property(e => e.DiaChiCq)
@@ -200,7 +199,6 @@ namespace QuanLyCongVan.Model.Models
                 entity.Property(e => e.DienThoai).HasMaxLength(20);
 
                 entity.Property(e => e.Ho)
-                    .IsRequired()
                     .HasMaxLength(50);
 
                 entity.Property(e => e.MaNhanSu)
@@ -214,11 +212,9 @@ namespace QuanLyCongVan.Model.Models
                 entity.Property(e => e.NgayVaoNganh).HasColumnType("datetime");
 
                 entity.Property(e => e.Ten)
-                    .IsRequired()
                     .HasMaxLength(10);
 
                 entity.Property(e => e.TenVietTat)
-                    .IsRequired()
                     .HasMaxLength(10);
             });
 

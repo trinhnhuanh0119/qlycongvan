@@ -29,4 +29,23 @@ namespace QuanLyCongVan.Model.Models
 
         public ICollection<FileVb> FileVb { get; set; }
     }
+    public class VanBanInsert
+    {
+        public int Id { get; set; }
+        public bool? VbdiDen { get; set; }
+        public string MaLoaiVb { get; set; }
+        public string MaCqbh { get; set; }
+        public string SoVb { get; set; }
+        public string SoDen { get; set; }
+        public string NgayDen { get; set; }
+        public string DoMat { get; set; }
+        public string DoKhan { get; set; }
+        public string TrichYeu { get; set; }
+        public string NoiNhan { get; set; }
+        public string NgayKy { get; set; }
+        public string NguoiKy { get; set; }
+        public bool? KetQuaXuLy { get; set; }
+        public bool? FileDinhKem { get; set; }
+        public string HanXuLy { get; set; }
+    }
 }

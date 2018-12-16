@@ -18,21 +18,15 @@ namespace QuanLyCongVan.Controllers
             return View(listNguoiDung);
         }
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(NguoiDung c)
+        public ActionResult Create([FromBody]NguoiDung c)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     nguoidungRepo.Create(c);
-                    return RedirectToAction("index");
+                    return Json(c);
                 }
             }
             catch (Exception ex)

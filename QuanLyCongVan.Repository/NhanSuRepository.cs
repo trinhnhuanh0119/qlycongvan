@@ -20,7 +20,7 @@ namespace QuanLyCongVan.Repository
                 parameters.Add("@MaNhanSu", request.MaNhanSu);
                 parameters.Add("@Ten", request.Ten);
                 parameters.Add("@GioiTinh", request.GioiTinh);
-                parameters.Add("@NgaySinh", request.NgaySinh);
+                parameters.Add("@NgaySinh", request.NgaySinh );
                 parameters.Add("@Anh", request.Anh);
                 parameters.Add("@NgayVaoNganh", request.NgayVaoNganh);
                 parameters.Add("@DiaChiNr", request.DiaChiNr);

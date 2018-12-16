@@ -24,7 +24,7 @@ namespace QuanLyCongVan.Repository
                 parameters.Add("@MaNhanSu", request.MaNhanSu);
                 parameters.Add("@PageIndex", request.PageIndex);
                 parameters.Add("@PageSize", request.PageSize);
-                var list = db.Query<PhongBanGridObject>("SearchallNhanSu", parameters, null, true, null, CommandType.StoredProcedure).AsList<PhongBanGridObject>();
+                var list = db.Query<PhongBanGridObject>("SearchallPhongBan", parameters, null, true, null, CommandType.StoredProcedure).AsList<PhongBanGridObject>();
                 return list;
             }
 

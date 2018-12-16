@@ -18,21 +18,15 @@ namespace QuanLyCongVan.Controllers
             return View(listDoMat);
         }
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(DoMat c)
+        public ActionResult Create([FromBody]DoMat c)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     domatRepo.Create(c);
-                    return RedirectToAction("index");
+                    return Json(c);
                 }
             }
             catch (Exception ex)

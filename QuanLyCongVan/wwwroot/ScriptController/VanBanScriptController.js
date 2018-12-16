@@ -22,6 +22,25 @@
             PageSize: 10
         };
 
+        $scope.model = {
+            Id: 0,
+            VbdiDen: true,
+            MaLoaiVb: 0,
+            MaCqbh: 0,
+            SoVb: '',
+            SoDen: '',
+            NgayDen: '',
+            DoMat: '',
+            DoKhan: '',
+            TrichYeu:'',
+            NoiNhan: '',
+            NgayKy: '',
+            NguoiKy: '',
+            KetQuaXuLy: true,
+            FileDinhKem: true,
+            HanXuLy:''
+        }
+
         var GetData = function () {
             $http({
                 method: 'POST',
@@ -47,4 +66,20 @@
         }
         ngInit();
 
+        $scope.onCreate = function () {
+            $http({
+                method: 'POST',
+                url: '/VanBan/Create',
+                data: JSON.stringify($scope.model),
+                dataType: "json"
+
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                console.log(response);
+                $scope.model = response.data;
+
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
     });

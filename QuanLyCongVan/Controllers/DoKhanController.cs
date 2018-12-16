@@ -18,21 +18,15 @@ namespace QuanLyCongVan.Controllers
             return View(listDoKhan);
         }
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(DoKhan c)
+        public ActionResult Create([FromBody]DoKhan c)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     dokhanRepo.Create(c);
-                    return RedirectToAction("index");
+                    return Json(c);
                 }
             }
             catch (Exception ex)

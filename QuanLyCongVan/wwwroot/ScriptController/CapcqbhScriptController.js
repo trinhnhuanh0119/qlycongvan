@@ -9,6 +9,12 @@
             PageIndex: 1,
             PageSize: 10
         };
+        $scope.model = {
+            Id: 0,
+            MaCapCqbh: 0,
+            TenCapCqbh: '',
+            GhiChu:''
+        };
 
         var GetData = function () {
             $http({
@@ -34,5 +40,23 @@
             GetData();
         }
         ngInit();
+
+
+        $scope.onCreate = function(){
+            $http({
+                method: 'POST',
+                url: '/CapCqbh/Create',
+                data: JSON.stringify($scope.model),
+                dataType: "json"
+
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                console.log(response);
+                $scope.model = response.data;
+
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
 
     });

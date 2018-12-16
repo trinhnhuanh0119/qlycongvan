@@ -5,11 +5,18 @@
         $scope.SearchObject = {
             MaChucVu:'',
             TenChucVu:'',
-            HeSoChucVu: '',
+            HeSoChucVu: 0.5,
             MoTa:'',
             PageIndex: 1,
             PageSize: 10
         };
+        $scope.model = {
+            Id: 0,
+            MaChucVu: 0,
+            TenChucVu: '',
+            HeSoChucVu: 0.5,
+            MoTa:''
+        }
 
         var GetData = function () {
             $http({
@@ -35,5 +42,20 @@
             GetData();
         }
         ngInit();
+        $scope.onCreate = function () {
+            $http({
+                method: 'POST',
+                url: '/ChucVu/Create',
+                data: JSON.stringify($scope.model),
+                dataType: "json"
 
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                console.log(response);
+                $scope.model = response.data;
+
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
     });

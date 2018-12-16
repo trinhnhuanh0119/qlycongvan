@@ -18,22 +18,29 @@ namespace QuanLyCongVan.Controllers
             return View(listNhanSu);
         }
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(NhanSu c)
+        public ActionResult Create([FromBody]NhanSuInsert c)
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    nhansuRepo.Create(c);
-                    return RedirectToAction("index");
-                }
+                NhanSu nhanSu = new NhanSu();
+                nhanSu.Anh = c.Anh;
+                nhanSu.Dem = c.Dem;
+                nhanSu.DiaChiCq = c.DiaChiCq;
+                nhanSu.DiaChiNr = c.DiaChiNr;
+                nhanSu.DienThoai = c.DienThoai;
+                nhanSu.GioiTinh = c.GioiTinh;
+                nhanSu.Ho = c.Ho;
+                nhanSu.Ten = c.Ten;
+                nhanSu.TenVietTat = c.TenVietTat;
+                nhanSu.MaNhanSu = c.MaNhanSu;
+                if(!string.IsNullOrEmpty(c.NgaySinh))
+                nhanSu.NgaySinh = DateTime.ParseExact(c.NgaySinh, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
+                if(!string.IsNullOrEmpty(c.NgayVaoNganh))
+                nhanSu.NgayVaoNganh = DateTime.ParseExact(c.NgayVaoNganh, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
+                nhansuRepo.Create(nhanSu);
+                    return Json(c);
+                
             }
             catch (Exception ex)
             {

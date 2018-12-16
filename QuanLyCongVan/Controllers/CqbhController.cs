@@ -17,22 +17,15 @@ namespace QuanLyCongVan.Controllers
             var listCqbh = cqbhRepo.GetAll();
             return View(listCqbh);
         }
-
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(Cqbh c)
+        public ActionResult Create([FromBody]Cqbh c)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     cqbhRepo.Create(c);
-                    return RedirectToAction("index");
+                    return Json(c);
                 }
             }
             catch (Exception ex)

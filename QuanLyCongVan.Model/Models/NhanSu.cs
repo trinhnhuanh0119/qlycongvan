@@ -20,4 +20,22 @@ namespace QuanLyCongVan.Model.Models
         public string DienThoai { get; set; }
         public string MaPhong { get; set; }
     }
+
+    public class NhanSuInsert
+    {
+        public int Id { get; set; }
+        public string MaNhanSu { get; set; }
+        public string Ho { get; set; }
+        public string Dem { get; set; }
+        public string Ten { get; set; }
+        public string TenVietTat { get; set; }
+        public bool? GioiTinh { get; set; }
+        public string NgaySinh { get; set; }
+        public string Anh { get; set; }
+        public string NgayVaoNganh { get; set; }
+        public string DiaChiNr { get; set; }
+        public string DiaChiCq { get; set; }
+        public string DienThoai { get; set; }
+        public string MaPhong { get; set; }
+    }
 }

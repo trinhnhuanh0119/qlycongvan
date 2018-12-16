@@ -23,7 +23,7 @@ namespace QuanLyCongVan.Repository
                 parameters.Add("@MoTa", request.MoTa);
                 parameters.Add("@PageIndex", request.PageIndex);
                 parameters.Add("@PageSize", request.PageSize);
-                var list = db.Query<ChucVuGridObject>("SearchallChucVu", parameters, null, true, null, CommandType.StoredProcedure).AsList<ChucVuGridObject>();
+                var list = db.Query<ChucVuGridObject>("SearchtallChucVu", parameters, null, true, null, CommandType.StoredProcedure).AsList<ChucVuGridObject>();
                 return list;
             }
 

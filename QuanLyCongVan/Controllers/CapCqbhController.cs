@@ -18,21 +18,15 @@ namespace QuanLyCongVan.Controllers
             return View(listCapCqbh);
         }
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(CapCqbh c)
+        public ActionResult Create([FromBody]CapCqbh c)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     capcqbhRepo.Create(c);
-                    return RedirectToAction("index");
+                    return Json(c);
                 }
             }
             catch (Exception ex)

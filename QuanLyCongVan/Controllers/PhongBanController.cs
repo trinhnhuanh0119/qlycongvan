@@ -18,21 +18,15 @@ namespace QuanLyCongVan.Controllers
             return View(listPhongBan);
         }
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(PhongBan c)
+        public ActionResult Create([FromBody]PhongBan c)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     phongbanRepo.Create(c);
-                    return RedirectToAction("index");
+                    return Json(c);
                 }
             }
             catch (Exception ex)

@@ -18,21 +18,15 @@ namespace QuanLyCongVan.Controllers
             return View(listLoaiVanBan);
         }
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(LoaiVanBan c)
+        public ActionResult Create([FromBody]LoaiVanBan c)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     loaivanbanRepo.Create(c);
-                    return RedirectToAction("index");
+                    return Json(c);
                 }
             }
             catch (Exception ex)

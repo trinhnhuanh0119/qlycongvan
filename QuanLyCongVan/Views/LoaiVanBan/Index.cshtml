@@ -36,92 +36,20 @@
                     <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
                         <i class="ace-icon fa fa-cog bigger-130"></i>
                     </div>
-                    <button class="btn btn-sm btn-primary" data-target="#confirm-status" data-toggle="modal">test</button>
-                    <div class="ace-settings-box clearfix" id="ace-settings-box">
-                        <div class="pull-left width-50">
-                            <div class="ace-settings-item">
-                                <div class="pull-left">
-                                    <select id="skin-colorpicker" ng-model="Option" ng-change="ShowValue()" class="hide">
-                                        <option data-skin="no-skin" value="#438EB9">#438EB9</option>
-                                        <option data-skin="skin-1" value="#222A2D">#222A2D</option>
-                                        <option data-skin="skin-2" value="#C6487E">#C6487E</option>
-                                        <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
-                                    </select>
-                                </div>
-                                <span>&nbsp; Choose Skin</span>
-                            </div>
-
-                            <div class="ace-settings-item">
-                                <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-navbar" autocomplete="off" />
-                                <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
-                            </div>
-
-                            <div class="ace-settings-item">
-                                <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-sidebar" autocomplete="off" />
-                                <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
-                            </div>
-
-                            <div class="ace-settings-item">
-                                <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-breadcrumbs" autocomplete="off" />
-                                <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
-                            </div>
-
-                            <div class="ace-settings-item">
-                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" autocomplete="off" />
-                                <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
-                            </div>
-
-                            <div class="ace-settings-item">
-                                <input type="checkbox" class="ace ace-checkbox-2 ace-save-state" id="ace-settings-add-container" autocomplete="off" />
-                                <label class="lbl" for="ace-settings-add-container">
-                                    Inside
-                                    <b>.container</b>
-                                </label>
-                            </div>
-                        </div><!-- /.pull-left -->
-
-                        <div class="pull-left width-50">
-                            <div class="ace-settings-item">
-                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" autocomplete="off" />
-                                <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
-                            </div>
-
-                            <div class="ace-settings-item">
-                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" autocomplete="off" />
-                                <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
-                            </div>
-
-                            <div class="ace-settings-item">
-                                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" autocomplete="off" />
-                                <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
-                            </div>
-                        </div><!-- /.pull-left -->
-                    </div><!-- /.ace-settings-box -->
+                    <button class="btn btn-sm btn-success" data-target="#confirm-status" data-toggle="modal">Thêm mới</button>
+                    <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
 
                 <div class="page-header">
                     <h1>
-                        jqGrid
-                        <small>
-                            <i class="ace-icon fa fa-angle-double-right"></i>
-                            Dynamic tables and grids using jqGrid plugin
-                        </small>
+                        Danh sách loại văn bản
                     </h1>
                 </div><!-- /.page-header -->
 
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
-                        <div class="alert alert-info">
-                            <button class="close" data-dismiss="alert">
-                                <i class="ace-icon fa fa-times"></i>
-                            </button>
-
-                            <i class="ace-icon fa fa-hand-o-right"></i>
-                            Please note that demo server is not configured to save the changes, therefore you may see an error message.
-                        </div>
-
-                        <table class="table table-responsive" id="grid-table">
+                        <table class="table table-responsive table-bordered" id="grid-table">
                             <tr>
                                 <th>Mã loại</th>
                                 <th>Tên</th>
@@ -148,24 +76,45 @@
 
     @*Modal hển thị*@
     <div class="modal fade" id="confirm-status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm dv-modal">
+        <div class="modal-dialog modal-sm dv-modal" style="width:60%">
             <div class="modal-content modal-xoa">
                 <div class="tab-content tab-content_xoa">
                     <div class="modal-header no-padding widget-header-small">
                         <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
-                        <p class="title-ct uppercase no-margin"><i class="ace-icon fa fa-exclamation-triangle red"></i>Thông báo</p>
-                        <p>
-                            {{texttoShow}}
-                        </p>
+                        <h4 class="modal-title">Thêm mới loại văn bản</h4>
                     </div>
                     <div class="modal-body">
-                        <span>
-                            Bạn có chắc chắn muốn: <strong class="red"></strong>?
-                        </span>
+                        <div class="row">
+                            <label class="col-sm-3 control-label no-padding-right text-right">Mã loại văn bản:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="model.MaLoaiVb" />
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <label class="col-sm-3 control-label no-padding-right text-right">Tên loại văn bản:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="model.TenLoaiVb" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-sm-3 control-label no-padding-right text-right">Tên viết tắt:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="model.TenVietTat" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <label class="col-sm-3 control-label no-padding-right text-right">Kiểu văn bản:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="model.KieuVanBan" />
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer no-border">
-                        <a class="btn btn-danger btn-xs btn-ok" ng-click="test1()"><i class="fa fa-check-square-o"></i> Có</a>
-                        <a class="btn btn-xs btn-info" data-dismiss="modal"><i class="fa fa-times-circle"></i> Không</a>
+                        <a class="btn btn-success btn-xs btn-ok" ng-click="onCreate()"><i class="fa fa-check-square-o"></i> Lưu</a>
+                        <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Đóng</a>
                     </div>
                 </div>
             </div>

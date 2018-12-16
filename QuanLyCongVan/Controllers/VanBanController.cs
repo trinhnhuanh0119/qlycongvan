@@ -18,22 +18,33 @@ namespace QuanLyCongVan.Controllers
             return View(listVanBan);
         }
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public ActionResult Create(VanBan c)
+        public ActionResult Create([FromBody]VanBanInsert c)
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    vanbanRepo.Create(c);
-                    return RedirectToAction("index");
-                }
+                VanBan vanBan = new VanBan();
+                vanBan.VbdiDen = c.VbdiDen;
+                vanBan.MaLoaiVb = c.MaLoaiVb;
+                vanBan.MaCqbh = c.MaCqbh;
+                vanBan.DoKhan = c.DoKhan;
+                vanBan.DoMat = c.DoMat;
+                vanBan.SoDen = c.SoDen;
+                vanBan.SoVb = c.SoVb;
+                vanBan.TrichYeu = c.TrichYeu;
+                vanBan.NoiNhan = c.NoiNhan;
+                vanBan.NguoiKy = c.NguoiKy;
+                vanBan.FileDinhKem = c.FileDinhKem;
+                vanBan.KetQuaXuLy = c.KetQuaXuLy;
+                if (!string.IsNullOrEmpty(c.NgayDen))
+                    vanBan.NgayDen= DateTime.ParseExact(c.NgayDen, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
+                if (!string.IsNullOrEmpty(c.NgayKy))
+                    vanBan.NgayKy = DateTime.ParseExact(c.NgayKy, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
+                if (!string.IsNullOrEmpty(c.HanXuLy))
+                    vanBan.HanXuLy = DateTime.ParseExact(c.HanXuLy, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
+                vanbanRepo.Create(vanBan);
+                    return Json(c);
+                
             }
             catch (Exception ex)
             {

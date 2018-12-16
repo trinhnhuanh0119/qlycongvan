@@ -26,7 +26,8 @@ namespace QuanLyCongVan.Repository
                 parameters.Add("@DoMat", request.DoMat);
                 parameters.Add("@DoKhan", request.DoKhan);
                 parameters.Add("@TrichYeu", request.TrichYeu);
-                parameters.Add("@NoiNhan", request.NgayKy);
+                parameters.Add("@NoiNhan", request.NoiNhan);
+                parameters.Add("@NgayKy", request.NgayKy);
                 parameters.Add("@NguoiKy", request.NguoiKy);
                 parameters.Add("@KetQuaXuLy", request.KetQuaXuLy);
                 parameters.Add("@FileDinhKem", request.FileDinhKem);
