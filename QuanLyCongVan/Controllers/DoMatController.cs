@@ -40,7 +40,7 @@ namespace QuanLyCongVan.Controllers
         public ActionResult Edit(int id)
         {
             var domat = domatRepo.GetById(id);
-            return View(domat);
+            return Json(domat);
         }
 
         [HttpPost]

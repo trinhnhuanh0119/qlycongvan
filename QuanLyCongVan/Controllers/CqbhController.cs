@@ -39,7 +39,7 @@ namespace QuanLyCongVan.Controllers
         public ActionResult Edit(int id)
         {
             var cqbh = cqbhRepo.GetById(id);
-            return View(cqbh);
+            return Json(cqbh);
         }
 
         [HttpPost]

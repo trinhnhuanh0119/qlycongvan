@@ -36,7 +36,7 @@
                     <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
                         <i class="ace-icon fa fa-cog bigger-130"></i>
                     </div>
-                    <button class="btn btn-sm btn-success" data-target="#confirm-status" data-toggle="modal">Thêm mới</button>
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
 
@@ -66,23 +66,27 @@
                                 <th>Kết quả xử lý</th>
                                 <th>File đính kèm</th>
                                 <th>Hạn xử lý</th>
+                                <th>Thao tác</th>
                             </tr>
-                            <tr ng-repeat="">
-                                <td>{{sp.vanBanDiDen}} </td>
-                                <td>{{sp.maLoaiVanBan}} </td>
-                                <td>{{sp.maCQBH}} </td>
-                                <td>{{sp.soVB}} </td>
+                            <tr ng-repeat="sp in datagrid">
+                                <td>{{sp.vbdiDen}} </td>
+                                <td>{{sp.maLoaiVb}} </td>
+                                <td>{{sp.maCqbh}} </td>
+                                <td>{{sp.soVb}} </td>
                                 <td>{{sp.soDen}} </td>
-                                <td>{{sp.ngayDen}} </td>
+                                <td>{{sp.ngayDen| date:"dd/MM/yyyy"}} </td>
                                 <td>{{sp.doMat}} </td>
                                 <td>{{sp.doKhan}} </td>
                                 <td>{{sp.trichYeu}} </td>
                                 <td>{{sp.noiNhan}} </td>
-                                <td>{{sp.ngayKy}} </td>
+                                <td>{{sp.ngayKy | date:"dd/MM/yyyy"}} </td>
                                 <td>{{sp.nguoiKy}} </td>
                                 <td>{{sp.ketQuaXuLy}} </td>
                                 <td> {{sp.fileDinhKem}}</td>
-                                <td>{{sp.hanXuLy}} </td>
+                                <td>{{sp.hanXuLy| date:"dd/MM/yyyy"}} </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                </td>
                             </tr>
                         </table>
 
@@ -109,105 +113,105 @@
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Văn bản đi đến:</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" class="form-control" ng-model="model.VbdiDen" />
+                                <input type="checkbox" class="form-control" ng-model="model.vbdiDen" />
                             </div>
                         </div>
                         <div class="row">
 
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã loại văn bản:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaLoaiVb" />
+                                <input type="text" class="form-control" ng-model="model.maLoaiVb" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã cơ quan ban hành:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaCqbh" />
+                                <input type="text" class="form-control" ng-model="model.maCqbh" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Số văn bản:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.SoVb" />
+                                <input type="text" class="form-control" ng-model="model.soVb" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Số Đến:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.SoDen" />
+                                <input type="text" class="form-control" ng-model="model.soDen" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Ngày đến:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.NgayDen" />
+                                <input type="text" class="form-control" ng-model="model.ngayDen" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Độ mật:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.DoMat" />
+                                <input type="text" class="form-control" ng-model="model.doMat" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Độ khẩn:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.Dokhan" />
+                                <input type="text" class="form-control" ng-model="model.doKhan" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Trích yếu:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.TrichYeu" />
+                                <input type="text" class="form-control" ng-model="model.trichYeu" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Nơi nhận:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.NoiNhan" />
+                                <input type="text" class="form-control" ng-model="model.noiNhan" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Ngày ký:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.NgayKy" />
+                                <input type="text" class="form-control" ng-model="model.ngayKy" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Người ký:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.NguoiKy" />
+                                <input type="text" class="form-control" ng-model="model.nguoiKy" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Kết quả xử lý:</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" class="form-control" ng-model="model.KetQuaXuLy" />
+                                <input type="checkbox" class="form-control" ng-model="model.ketQuaXuLy" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">File đính kèm:</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" class="form-control" ng-model="model.FileDinhKem" />
+                                <input type="checkbox" class="form-control" ng-model="model.fileDinhKem" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Hạn xử lý:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.HanXuLy" />
+                                <input type="text" class="form-control" ng-model="model.hanXuLy" />
                             </div>
                         </div>
                     </div>

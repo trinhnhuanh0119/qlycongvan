@@ -57,7 +57,7 @@ namespace QuanLyCongVan.Controllers
         public ActionResult Edit(int id)
         {
             var vanban = vanbanRepo.GetById(id);
-            return View(vanban);
+            return Json(vanban);
         }
 
         [HttpPost]

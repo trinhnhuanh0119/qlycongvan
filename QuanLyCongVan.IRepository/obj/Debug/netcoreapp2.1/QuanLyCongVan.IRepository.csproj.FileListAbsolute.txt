@@ -15,4 +15,3 @@ C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.IRepository\obj\Debug\netc
 C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.IRepository\obj\Debug\netcoreapp2.1\QuanLyCongVan.IRepository.AssemblyInfo.cs
 C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.IRepository\obj\Debug\netcoreapp2.1\QuanLyCongVan.IRepository.dll
 C:\Users\Admin\Videos\qlycongvan-master\QuanLyCongVan.IRepository\obj\Debug\netcoreapp2.1\QuanLyCongVan.IRepository.pdb
-E:\Github\QuanLyCongVan\qlycongvan\QuanLyCongVan.IRepository\obj\Debug\netcoreapp2.1\QuanLyCongVan.IRepository.csprojAssemblyReference.cache

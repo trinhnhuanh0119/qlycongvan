@@ -40,7 +40,7 @@ namespace QuanLyCongVan.Controllers
         public ActionResult Edit(int id)
         {
             var nguoidung = nguoidungRepo.GetById(id);
-            return View(nguoidung);
+            return Json(nguoidung);
         }
 
         [HttpPost]

@@ -33,8 +33,10 @@
 
             <div class="page-content">
                 <div class="ace-settings-container" id="ace-settings-container">
-
-                    <button class="btn btn-sm btn-success" data-target="#confirm-status" data-toggle="modal">Thêm mới</button>
+                    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                        <i class="ace-icon fa fa-cog bigger-130"></i>
+                    </div>
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
                 </div><!-- /.ace-settings-box -->
             </div><!-- /.ace-settings-container -->
 
@@ -50,11 +52,15 @@
                             <th class="text-center">Mã </th>
                             <th class="text-center">Tên </th>
                             <th class="text-center">Ghi chú</th>
+                            <th>Thao tác</th>
                         </tr>
                         <tr ng-repeat="sp in datagrid">
                             <td>{{sp.maCapCQBH}} </td>
                             <td>{{sp.tenCapCQBH}} </td>
                             <td> {{sp.ghiChu}}</td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                            </td>
                         </tr>
                     </table>
 
@@ -81,21 +87,21 @@
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã cấp cơ quan:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaCapCqbh" />
+                                <input type="text" class="form-control" ng-model="model..maCapCqbh" />
                             </div>
                         </div>
                         <div class="row">
 
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên cấp cơ quan:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.TenCapCQBH" />
+                                <input type="text" class="form-control" ng-model="model.tenCapCqbh" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Ghi chú:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.GhiChu" />
+                                <input type="text" class="form-control" ng-model="model.ghiChu" />
                             </div>
                         </div>
                     </div>

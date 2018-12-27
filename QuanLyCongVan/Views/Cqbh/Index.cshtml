@@ -33,8 +33,10 @@
 
             <div class="page-content">
                 <div class="ace-settings-container" id="ace-settings-container">
-                    
-                    <button class="btn btn-sm btn-success" data-target="#confirm-status" data-toggle="modal">Thêm mới</button>
+                    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                        <i class="ace-icon fa fa-cog bigger-130"></i>
+                    </div>
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
 
@@ -58,6 +60,7 @@
                                 <th>Ghi chú</th>
                                 <th>Tên viết tắt</th>
                                 <th>Mã cấp CQBH</th>
+                                <th>Thao tác</th>
                             </tr>
                             <tr ng-repeat="sp in datagrid">
                                 <td>{{sp.maCQBH}} </td>
@@ -69,6 +72,9 @@
                                 <td>{{sp.ghiChu}} </td>
                                 <td>{{sp.tenVietTat}} </td>
                                 <td>{{sp.maCapCQBH}} </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                </td>
                             </tr>
                         </table>
 
@@ -95,63 +101,63 @@
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã cơ quan:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaCqbh" />
+                                <input type="text" class="form-control" ng-model="model.maCqbh" />
                             </div>
                         </div>
                         <div class="row">
 
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên cơ quan:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.TenCqbh" />
+                                <input type="text" class="form-control" ng-model="model.tenCqbh" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.DiaChi" />
+                                <input type="text" class="form-control" ng-model="model.diaChi" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Điện thoại:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.DienThoai" />
+                                <input type="text" class="form-control" ng-model="model.dienThoai" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Fax:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.Fax" />
+                                <input type="text" class="form-control" ng-model="model.fax" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Email:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.Email" />
+                                <input type="text" class="form-control" ng-model="model.email" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right"> Ghi chú:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.GhiChu" />
+                                <input type="text" class="form-control" ng-model="model.ghiChu" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên viết tắt:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.TenVietTat" />
+                                <input type="text" class="form-control" ng-model="model.tenVietTat" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã cấp cơ quan:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaCapCqbh" />
+                                <input type="text" class="form-control" ng-model="model.maCapCqbh" />
                             </div>
                         </div>
                     </div>

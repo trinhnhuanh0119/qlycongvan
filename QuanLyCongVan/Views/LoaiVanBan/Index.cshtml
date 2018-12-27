@@ -36,7 +36,7 @@
                     <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
                         <i class="ace-icon fa fa-cog bigger-130"></i>
                     </div>
-                    <button class="btn btn-sm btn-success" data-target="#confirm-status" data-toggle="modal">Thêm mới</button>
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
 
@@ -55,12 +55,16 @@
                                 <th>Tên</th>
                                 <th>Tên viết tắt</th>
                                 <th>Kiểu văn bản</th>
+                                <th>Thao tác</th>
                             </tr>
                             <tr ng-repeat="sp in datagrid">
                                 <td>{{sp.maLoaiVB}} </td>
                                 <td>{{sp.tenLoaiVB}} </td>
                                 <td>{{sp.tenVietTat}} </td>
                                 <td>{{sp.kieuVanBan}} </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                </td>
                             </tr>
                         </table>
 
@@ -87,28 +91,28 @@
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã loại văn bản:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaLoaiVb" />
+                                <input type="text" class="form-control" ng-model="model.maLoaiVb" />
                             </div>
                         </div>
                         <div class="row">
 
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên loại văn bản:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.TenLoaiVb" />
+                                <input type="text" class="form-control" ng-model="model.tenLoaiVb" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên viết tắt:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.TenVietTat" />
+                                <input type="text" class="form-control" ng-model="model.tenVietTat" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Kiểu văn bản:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.KieuVanBan" />
+                                <input type="text" class="form-control" ng-model="model.kieuVanBan" />
                             </div>
                         </div>
                     </div>

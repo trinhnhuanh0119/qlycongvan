@@ -36,7 +36,7 @@
                     <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
                         <i class="ace-icon fa fa-cog bigger-130"></i>
                     </div>
-                    <button class="btn btn-sm btn-success" data-target="#confirm-status" data-toggle="modal">Thêm mới</button>
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
 
@@ -56,6 +56,7 @@
                                 <th>Điện thoại</th>
                                 <th>Fax</th>
                                 <th>Mã nhân sự</th>
+                                <th>Thao tác</th>
                             </tr>
                             <tr ng-repeat="sp in datagrid">
                                 <td>{{sp.maPhong}} </td>
@@ -63,6 +64,9 @@
                                 <td>{{sp.dienThoai}} </td>
                                 <td>{{sp.fax}} </td>
                                 <td>{{sp.maNhanSu}} </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                </td>
                             </tr>
                         </table>
 
@@ -87,35 +91,35 @@
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã phòng:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaPhong" />
+                                <input type="text" class="form-control" ng-model="model.maPhong" />
                             </div>
                         </div>
                         <div class="row">
 
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên phòng:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.TenPhong" />
+                                <input type="text" class="form-control" ng-model="model.tenPhong" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Điện thoại:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.DienThoai" />
+                                <input type="text" class="form-control" ng-model="model.dienThoai" />
                             </div>
                         </div>
 
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Fax:</label>
+                            <label class="col-sm-3 control-label no-padding-right text-right">fax:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.Fax" />
+                                <input type="text" class="form-control" ng-model="model.fax" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã nhân sự:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaNhanSu" />
+                                <input type="text" class="form-control" ng-model="model.maNhanSu" />
                             </div>
                         </div>
                     </div>

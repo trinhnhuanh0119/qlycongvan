@@ -40,7 +40,7 @@ namespace QuanLyCongVan.Controllers
         public ActionResult Edit(int id)
         {
             DoKhan dokhan = dokhanRepo.GetById(id);
-            return View(dokhan);
+            return Json(dokhan);
         }
 
         [HttpPost]

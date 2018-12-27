@@ -33,8 +33,10 @@
 
             <div class="page-content">
                 <div class="ace-settings-container" id="ace-settings-container">
-                    
-                    <button class="btn btn-sm btn-success" data-target="#confirm-status" data-toggle="modal">Thêm mới</button>
+                    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                        <i class="ace-icon fa fa-cog bigger-130"></i>
+                    </div>
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
 
@@ -53,12 +55,16 @@
                                 <th>Tên </th>
                                 <th>Hệ số </th>
                                 <th>Mô tả</th>
+                                <th>Thao tác</th>
                             </tr>
                             <tr ng-repeat="sp in datagrid">
                                 <td>{{sp.maChucVu}} </td>
                                 <td>{{sp.tenChucVu}} </td>
                                 <td> {{sp.heSoChucVu}}</td>
                                 <td>{{sp.moTa}} </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                </td>
                             </tr>
                         </table>
 
@@ -85,28 +91,28 @@
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã chức vụ:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaChucVu" />
+                                <input type="text" class="form-control" ng-model="model.maChucVu" />
                             </div>
                         </div>
                         <div class="row">
 
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên chức vụ:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.TenChucVu" />
+                                <input type="text" class="form-control" ng-model="model.tenChucVu" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Hệ số chức vụ:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.HeSoChucVu" />
+                                <input type="text" class="form-control" ng-model="model.heSoChucVu" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mô tả:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MoTa" />
+                                <input type="text" class="form-control" ng-model="model.moTa" />
                             </div>
                         </div>
                     </div>

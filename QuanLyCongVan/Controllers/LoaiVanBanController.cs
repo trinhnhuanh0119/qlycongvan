@@ -40,7 +40,7 @@ namespace QuanLyCongVan.Controllers
         public ActionResult Edit(int id)
         {
             var loaivanban = loaivanbanRepo.GetById(id);
-            return View(loaivanban);
+            return Json(loaivanban);
         }
 
         [HttpPost]

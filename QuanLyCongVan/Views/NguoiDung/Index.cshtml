@@ -33,7 +33,10 @@
 
             <div class="page-content">
                 <div class="ace-settings-container" id="ace-settings-container">
-                    <button class="btn btn-sm btn-primary" data-target="#confirm-status" data-toggle="modal">Thêm mới</button>
+                    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+                        <i class="ace-icon fa fa-cog bigger-130"></i>
+                    </div>
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>         
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
 
@@ -52,12 +55,16 @@
                                 <th>Mật khẩu</th>
                                 <th>Kích hoạt</th>
                                 <th>Mã nhân sự</th>
+                                <th>Thao tác</th>
                             </tr>
                             <tr ng-repeat="sp in datagrid">
                                 <td>{{sp.tenTaiKhoan}} </td>
                                 <td>{{sp.matKhau}} </td>
                                 <td>{{sp.kichHoat}} </td>
                                 <td>{{sp.maNhanSu}} </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                </td>
                             </tr>
                         </table>
 
@@ -84,21 +91,21 @@
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên tài khoản:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.TenTaiKhoan" />
+                                <input type="text" class="form-control" ng-model="model.tenTaiKhoan" />
                             </div>
                         </div>
                         <div class="row">
 
                             <label class="col-sm-3 control-label no-padding-right text-right">mật khẩu:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MatKhau" />
+                                <input type="text" class="form-control" ng-model="model.matKhau" />
                             </div>
                         </div>
 
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">kích hoạt:</label>
                             <div class="col-sm-9">
-                                <input type="checkbox" class="form-control" ng-model="model.KichHoat" />
+                                <input type="checkbox" class="form-control" ng-model="model.kichHoat" />
                                 
                             </div>
                         </div>
@@ -106,7 +113,7 @@
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã nhân sự:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.MaNhanSu" />
+                                <input type="text" class="form-control" ng-model="model.maNhanSu" />
                             </div>
                         </div>
                     </div>
