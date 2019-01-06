@@ -43,6 +43,24 @@ namespace QuanLyCongVan.Controllers
             return Json(domat);
         }
 
+        [HttpPost]
+        public ActionResult Edit(DoMat c)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    domatRepo.Update(c);
+                    return RedirectToAction("index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return View(c);
+        }
+
         public ActionResult Delete(int id)
         {
             try
@@ -59,23 +77,6 @@ namespace QuanLyCongVan.Controllers
         public JsonResult getAllSearch([FromBody]DoMatTableGridRequest request)
         {
             return Json(domatRepo.GetAll(request));
-        }
-
-        public ActionResult Update ([FromBody]DoMat c)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    domatRepo.Update(c);
-                    return Json(c);
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-            return View(c);
         }
     }
 }

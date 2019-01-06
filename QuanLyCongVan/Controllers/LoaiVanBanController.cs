@@ -43,6 +43,24 @@ namespace QuanLyCongVan.Controllers
             return Json(loaivanban);
         }
 
+        [HttpPost]
+        public ActionResult Edit(LoaiVanBan c)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    loaivanbanRepo.Update(c);
+                    return RedirectToAction("index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return View(c);
+        }
+
         public ActionResult Delete(int id)
         {
             try
@@ -59,24 +77,6 @@ namespace QuanLyCongVan.Controllers
         public JsonResult getAllSearch([FromBody]LoaiVanBanTableGridRequest request)
         {
             return Json(loaivanbanRepo.GetAll(request));
-        }
-
-        [HttpPost]
-        public ActionResult Update([FromBody]LoaiVanBan c)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    loaivanbanRepo.Update(c);
-                    return Json(c);
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-            return View(c);
         }
     }
 }

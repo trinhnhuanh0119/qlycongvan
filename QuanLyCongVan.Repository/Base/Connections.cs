@@ -6,6 +6,6 @@ namespace QuanLyCongVan.Repository.Base
 {
     public class Connections
     {   // Chuỗi kết nối  User ID=qlvb_v2;Password=12345678@a;
-        public static string Connection = "Server=Bon;Database=QuanLyCongVan;Trusted_Connection=True;";
+        public static string Connection = "Server=DESKTOP-SLNDDHO\\SQL3;Database=QuanLyCongVan;Trusted_Connection=True;";
     }
 }

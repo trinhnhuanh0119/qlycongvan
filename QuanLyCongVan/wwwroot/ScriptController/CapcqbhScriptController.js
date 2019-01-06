@@ -42,43 +42,22 @@
         ngInit();
 
 
-        $scope.onCreate = function () {
-            if ($scope.model.id == '' || $scope.model.id == null || $scope.model.id == 0) {
-                $http({
-                    method: 'POST',
-                    url: '/CapCqbh/Create',
-                    data: JSON.stringify($scope.model),
-                    dataType: "json"
+        $scope.onCreate = function(){
+            $http({
+                method: 'POST',
+                url: '/CapCqbh/Create',
+                data: JSON.stringify($scope.model),
+                dataType: "json"
 
-                }).then(function successCallback(response) {
-                    // Hàm thực thi khi chạy đúng và trả về kết quả
-                    console.log(response);
-                    $scope.model = response.data;
-                    $("#confirm-status").modal('hide');
-                    GetData();
-                }, function errorCallback(response) {
-                    // Hàm thực thi khi xảy ra lỗi
-                });
-            } else {
-                $http({
-                    method: 'POST',
-                    url: '/CapCqbh/Update',
-                    data: JSON.stringify($scope.model),
-                    dataType: "json"
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                console.log(response);
+                $scope.model = response.data;
 
-                }).then(function successCallback(response) {
-                    // Hàm thực thi khi chạy đúng và trả về kết quả
-                    console.log(response);
-                    $scope.model = response.data;
-                    $("#confirm-status").modal('hide');
-                    GetData();
-                }, function errorCallback(response) {
-                    // Hàm thực thi khi xảy ra lỗi
-                });
-            }
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
         }
-
-        //Load dữ liệu
         $scope.onEdit = function (id) {
             $http({
                 method: 'GET',
@@ -100,7 +79,5 @@
             $scope.model = {};
             $("#confirm-status").modal('show');
         }
-
-   
 
     });

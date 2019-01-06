@@ -14,10 +14,6 @@
                         <i class="ace-icon fa fa-home home-icon"></i>
                         <a href="/Home/Index">Trang chủ</a>
                     </li>
-
-                    <li>
-                        <a href="#">Trang hiện tại</a>
-                    </li>
                     <li class="active">Thêm mới phòng ban</li>
                 </ul><!-- /.breadcrumb -->
 
@@ -33,9 +29,7 @@
 
             <div class="page-content">
                 <div class="ace-settings-container" id="ace-settings-container">
-                    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
-                        <i class="ace-icon fa fa-cog bigger-130"></i>
-                    </div>
+
                     <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
@@ -66,6 +60,7 @@
                                 <td>{{sp.maNhanSu}} </td>
                                 <td>
                                     <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         </table>

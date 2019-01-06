@@ -34,7 +34,6 @@ namespace QuanLyCongVan.Controllers
                 nhanSu.Ten = c.Ten;
                 nhanSu.TenVietTat = c.TenVietTat;
                 nhanSu.MaNhanSu = c.MaNhanSu;
-                nhanSu.MaPhong = c.MaPhong;
                 if(!string.IsNullOrEmpty(c.NgaySinh))
                 nhanSu.NgaySinh = DateTime.ParseExact(c.NgaySinh, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
                 if(!string.IsNullOrEmpty(c.NgayVaoNganh))
