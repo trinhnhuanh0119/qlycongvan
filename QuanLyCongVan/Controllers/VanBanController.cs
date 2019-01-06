@@ -59,25 +59,7 @@ namespace QuanLyCongVan.Controllers
             var vanban = vanbanRepo.GetById(id);
             return Json(vanban);
         }
-
-        [HttpPost]
-        public ActionResult Edit(VanBan c)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    vanbanRepo.Update(c);
-                    return RedirectToAction("index");
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-            return View(c);
-        }
-
+    
         public ActionResult Delete(int id)
         {
             try
@@ -94,6 +76,21 @@ namespace QuanLyCongVan.Controllers
         public JsonResult getAllSearch([FromBody]VanBanTableGridRequest request)
         {
             return Json(vanbanRepo.GetAll(request));
+        }
+
+        [HttpPost]
+        public ActionResult Update([FromBody]VanBan c)
+        {
+            try
+            {
+                vanbanRepo.Update(c);
+                return Json(c);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return View(c);
         }
     }
 }

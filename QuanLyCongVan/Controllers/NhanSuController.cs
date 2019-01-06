@@ -57,24 +57,6 @@ namespace QuanLyCongVan.Controllers
             return Json(nhansu);
         }
 
-        [HttpPost]
-        public ActionResult Edit(NhanSu c)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    nhansuRepo.Update(c);
-                    return RedirectToAction("index");
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-            return View(c);
-        }
-
         public ActionResult Delete(int id)
         {
             try
@@ -92,5 +74,23 @@ namespace QuanLyCongVan.Controllers
         {
             return Json(nhansuRepo.GetAll(request));
         }
+
+        [HttpPost]
+        public ActionResult Update([FromBody]NhanSu c)
+        {
+                try
+                {
+                    if (ModelState.IsValid)
+                    {
+                        nhansuRepo.Update(c);
+                        return Json(c);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+                return View(c);
+            }
+        }
     }
-}

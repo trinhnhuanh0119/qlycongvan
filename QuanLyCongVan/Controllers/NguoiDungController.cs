@@ -68,7 +68,7 @@ namespace QuanLyCongVan.Controllers
                 if (ModelState.IsValid)
                 {
                     nguoidungRepo.Update(c);
-                    return View(c);
+                    return Json(c);
                 }
             }
             catch (Exception ex)

@@ -47,6 +47,7 @@
         ngInit();
 
         $scope.onCreate = function () {
+            if ($scope.model.id == '' || $scope.model.id == null || $scope.model.id == 0) {
             $http({
                 method: 'POST',
                 url: '/PhongBan/Create',
@@ -57,10 +58,28 @@
                 // Hàm thực thi khi chạy đúng và trả về kết quả
                 console.log(response);
                 $scope.model = response.data;
-
+                $("#confirm-status").modal('hide');
+                GetData();
             }, function errorCallback(response) {
                 // Hàm thực thi khi xảy ra lỗi
-            });
+                    });
+            } else {
+                $http({
+                    method: 'POST',
+                    url: '/PhongBan/Update',
+                    data: JSON.stringify($scope.model),
+                    dataType: "json"
+
+                }).then(function successCallback(response) {
+                    // Hàm thực thi khi chạy đúng và trả về kết quả
+                    console.log(response);
+                    $scope.model = response.data;
+                    $("#confirm-status").modal('hide');
+                    GetData();
+                }, function errorCallback(response) {
+                    // Hàm thực thi khi xảy ra lỗi
+                });
+            }
         }
         $scope.onEdit = function (id) {
             $http({
