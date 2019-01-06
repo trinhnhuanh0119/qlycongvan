@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<script src="~/ScriptController/CapcqbhScriptController.js"></script>
+<div class="main-container ace-save-state" id="main-container" ng-controller="AddCongVan">
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="/Home/Index">Trang chủ</a>
+                    </li>
+                    <li class="active">Thêm mới công văn</li>
+                </ul><!-- /.breadcrumb -->
+                <div class="nav-search" id="nav-search">
+                    <form class="form-search">
+                        <span class="input-icon">
+                            <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                            <i class="ace-icon fa fa-search nav-search-icon"></i>
+                        </span>
+                    </form>
+                </div><!-- /.nav-search -->
+            </div>
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>
+                        Thêm mới công văn
+                    </h1>
+                </div><!-- /.page-header -->
+                <div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="widget-box">
+                                <div class="widget-header">
+                                    <h4 class="smaller">Danh sách công văn</h4>
+                                </div>
+                                <div class="widget-body">
+                                    <div class="widget-main">
+                                        <table class="table table-responsive table-bordered" id="grid-table">
+                                            <tr>
+                                                <th>Số công văn</th>
+                                                <th>Loại công văn</th>
+                                                <th>Cơ quan ban hành</th>
+                                                <th>Trích yếu</th>
+                                                <th>Nơi lưu</th>
+                                            </tr>
+                                            <tr ng-repeat="sp in datagrid"></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <br>
+                            <div>
+                                <div class="row">
+                                    <label class="col-sm-3 control-label no-padding-right text-left">Số công văn:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <div class="row">
+                                    <label class="col-sm-3 control-label no-padding-right text-left">Loại công văn:</label>
+                                    <div class="col-sm-9">
+                                        <select class="col-sm-12">
+                                            <option value="#"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <div class="row">
+                                    <label class="col-sm-3 control-label no-padding-right text-left">Cơ quan BH:</label>
+                                    <div class="col-sm-9">
+                                        <select class="col-sm-12">
+                                            <option value="#"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <div class="row">
+                                    <label class="col-sm-3 control-label no-padding-right text-left">Trích yếu:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <div>
+                                    <div class="row">
+                                        <label class="col-sm-3 control-label no-padding-right text-left">Nơi lưu:</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">...</button>
+                                            @*Modal hiển thị*@
+                                            <div id="myModal" class="modal fade" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Nơi lưu trữ</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="widget-body">
+                                                                <div class="widget-main">
+                                                                    <table class="table table-responsive table-bordered" id="grid-table">
+                                                                        <tr>
+                                                                            <th>Mã lưu trữ</th>
+                                                                            <th>Tên công văn</th>
+                                                                            <th>Kho</th>
+                                                                            <th>Kệ giá</th>
+                                                                            <th>Hộp cặp</th>
+                                                                            <th>Thao tác</th>
+                                                                        </tr>
+                                                                        <tr ng-repeat="sp in datagrid"></tr>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.page-content -->
+        </div>
+
+    </div>
+</div>
+
+
+

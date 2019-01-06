@@ -18,6 +18,7 @@
             MaNhanSu:0
         };
 
+        
         var GetData = function () {
             $http({
                 method: 'POST',
@@ -43,8 +44,24 @@
         }
         ngInit();
 
+        $scope.onDelete = function (id) {
+            $http({
+                method: 'GET',
+                url: '/NguoiDung/Delete',
+                params: { id: id }
+
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                console.log(response);
+                GetData();
+
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
 
         $scope.onCreate = function () {
+            if ($scope.model.id == '' || $scope.model.id == null || $scope.model.id == 0) {
             $http({
                 method: 'POST',
                 url: '/NguoiDung/Create',
@@ -54,11 +71,27 @@
             }).then(function successCallback(response) {
                 // Hàm thực thi khi chạy đúng và trả về kết quả
                 console.log(response);
-                $scope.model = response.data;
-
+                $("#confirm-status").modal('hide');
+                GetData();
             }, function errorCallback(response) {
                 // Hàm thực thi khi xảy ra lỗi
-            });
+                    });
+            } else {
+                $http({
+                    method: 'POST',
+                    url: '/NguoiDung/Update',
+                    data: JSON.stringify($scope.model),
+                    dataType: "json"
+
+                }).then(function successCallback(response) {
+                    // Hàm thực thi khi chạy đúng và trả về kết quả
+                    console.log(response);
+                    $("#confirm-status").modal('hide');
+                    GetData();
+                }, function errorCallback(response) {
+                    // Hàm thực thi khi xảy ra lỗi
+                });
+            }
         }
         $scope.onEdit = function (id) {
             $http({

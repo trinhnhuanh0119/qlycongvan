@@ -43,6 +43,24 @@ namespace QuanLyCongVan.Controllers
             return Json(phongban);
         }
 
+        [HttpPost]
+        public ActionResult Edit(PhongBan c)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    phongbanRepo.Update(c);
+                    return RedirectToAction("index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return View(c);
+        }
+
         public ActionResult Delete(int id)
         {
             try
@@ -59,21 +77,6 @@ namespace QuanLyCongVan.Controllers
         public JsonResult getAllSearch([FromBody]PhongBanTableGridRequest request)
         {
             return Json(phongbanRepo.GetAll(request));
-        }
-
-        [HttpPost]
-        public ActionResult Update([FromBody]PhongBan c)
-        {
-            try
-            {
-                phongbanRepo.Update(c);
-                return Json(c);
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-            return View(c);
         }
     }
 }

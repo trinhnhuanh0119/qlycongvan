@@ -20,7 +20,8 @@ namespace QuanLyCongVan.Repository
                 parameters.Add("@MaLoaiVB", request.MaLoaiVB);
                 parameters.Add("@TenLoaiVB", request.TenLoaiVB);
                 parameters.Add("@TenVietTat", request.TenVietTat);
-                parameters.Add("@KieuVanBan", request.KieuVanBan);
+                parameters.Add("@Den", request.Den);
+                parameters.Add("@Di", request.Di);
                 parameters.Add("@PageIndex", request.PageIndex);
                 parameters.Add("@PageSize", request.PageSize);
                 var list = db.Query<LoaiVanBanGridObject>("SearchallLoaiVanBan", parameters, null, true, null, CommandType.StoredProcedure).AsList<LoaiVanBanGridObject>();

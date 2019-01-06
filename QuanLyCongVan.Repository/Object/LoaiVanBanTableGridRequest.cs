@@ -13,5 +13,7 @@ namespace QuanLyCongVan.Repository.Object
         public int KieuVanBan { get; set; }
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
+        public byte Di { get; set; }
+        public byte Den { get; set; }
     }
 }

@@ -43,24 +43,6 @@ namespace QuanLyCongVan.Controllers
             return Json(dokhan);
         }
 
-        [HttpPost]
-        public ActionResult Edit(DoKhan c)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    dokhanRepo.Update(c);
-                    return RedirectToAction("index");
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-            return View(c);
-        }
-
         public ActionResult Delete(int id)
         {
             try
@@ -78,6 +60,24 @@ namespace QuanLyCongVan.Controllers
         public JsonResult getAllSearch([FromBody]DoKhanTableGridRequest request)
         { 
             return Json(dokhanRepo.GetAll(request));
+        }
+
+        [HttpPost]
+        public ActionResult Update([FromBody]DoKhan c)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    dokhanRepo.Update(c);
+                    return Json(c);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return View(c);
         }
     }
 }
