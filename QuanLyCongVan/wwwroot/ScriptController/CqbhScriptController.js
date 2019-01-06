@@ -2,6 +2,7 @@
     function ($location, $scope, $routeParams, $http, $window, $timeout) {
 
         $scope.datagrid = [];
+        $scope.idremove = 0;
         $scope.SearchObject = {
             MaCQBH: '',
             TenCQBH: '',
@@ -64,9 +65,9 @@
             }).then(function successCallback(response) {
                 // Hàm thực thi khi chạy đúng và trả về kết quả
                 console.log(response);
-                $scope.model = response.data;
                 $("#confirm-status").modal('hide');
                 GetData();
+
             }, function errorCallback(response) {
                 // Hàm thực thi khi xảy ra lỗi
                     });
@@ -80,14 +81,13 @@
                 }).then(function successCallback(response) {
                     // Hàm thực thi khi chạy đúng và trả về kết quả
                     console.log(response);
-                    $scope.model = response.data;
                     $("#confirm-status").modal('hide');
                     GetData();
+
                 }, function errorCallback(response) {
                     // Hàm thực thi khi xảy ra lỗi
                 });
             }
-
         }
         $scope.onEdit = function (id) {
             $http({
@@ -106,8 +106,28 @@
                 // Hàm thực thi khi xảy ra lỗi
             });
         }
+
+        $scope.onDelete = function (id) {
+            $http({
+                method: 'Post',
+                url: '/Cqbh/Delete',
+                params: { id: id }
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                $("#notifycal").modal('hide');
+                GetData();
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
+
         $scope.show = function () {
             $scope.model = {};
             $("#confirm-status").modal('show');
+        }
+        
+        $scope.confirmdelete = function (id) {
+            $scope.idremove = id;
+            $("#notifycal").modal('show');
         }
     });

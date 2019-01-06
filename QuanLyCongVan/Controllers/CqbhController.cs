@@ -42,17 +42,18 @@ namespace QuanLyCongVan.Controllers
             return Json(cqbh);
         }
 
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             try
             {
                 cqbhRepo.Delete(id);
+                return Json(true);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                ModelState.AddModelError(string.Empty, ex.Message);
+                return Json(false);
             }
-            return RedirectToAction("index");
         }
         [HttpPost]
         public JsonResult getAllSearch([FromBody]CQBHTableGridRequest request)

@@ -2,6 +2,7 @@
     function ($location, $scope, $routeParams, $http, $window, $timeout) {
 
         $scope.datagrid = [];
+        $scope.idremove = 0;
         $scope.SearchObject = {
             MaCapCQBH: '',
             TenCapCQBH:'',
@@ -44,21 +45,21 @@
 
         $scope.onCreate = function () {
             if ($scope.model.id == '' || $scope.model.id == null || $scope.model.id == 0) {
-                $http({
-                    method: 'POST',
-                    url: '/CapCqbh/Create',
-                    data: JSON.stringify($scope.model),
-                    dataType: "json"
+            $http({
+                method: 'POST',
+                url: '/CapCqbh/Create',
+                data: JSON.stringify($scope.model),
+                dataType: "json"
 
-                }).then(function successCallback(response) {
-                    // Hàm thực thi khi chạy đúng và trả về kết quả
-                    console.log(response);
-                    $scope.model = response.data;
-                    $("#confirm-status").modal('hide');
-                    GetData();
-                }, function errorCallback(response) {
-                    // Hàm thực thi khi xảy ra lỗi
-                });
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                console.log(response);
+                $("#confirm-status").modal('hide');
+                GetData();
+                
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+                    });
             } else {
                 $http({
                     method: 'POST',
@@ -69,16 +70,14 @@
                 }).then(function successCallback(response) {
                     // Hàm thực thi khi chạy đúng và trả về kết quả
                     console.log(response);
-                    $scope.model = response.data;
                     $("#confirm-status").modal('hide');
-                    GetData();
+                  GetData();
                 }, function errorCallback(response) {
                     // Hàm thực thi khi xảy ra lỗi
                 });
             }
-        }
 
-        //Load dữ liệu
+        }
         $scope.onEdit = function (id) {
             $http({
                 method: 'GET',
@@ -96,11 +95,32 @@
                 // Hàm thực thi khi xảy ra lỗi
             });
         }
+
+        $scope.onDelete = function (id) {
+            $http({
+                method: 'Post',
+                url: '/Capcqbh/Delete',
+                params: { id: id }
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                $("#notifycal").modal('hide');
+                GetData();
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
+
         $scope.show = function () {
             $scope.model = {};
             $("#confirm-status").modal('show');
         }
 
-   
+
+        $scope.confirmdelete = function (id) {
+            $scope.idremove = id;
+            $("#notifycal").modal('show');
+        }
+
 
     });
+ 

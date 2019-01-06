@@ -58,14 +58,33 @@ namespace QuanLyCongVan.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(NhanSu c)
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                nhansuRepo.Delete(id);
+                return Json(true);
+            }
+            catch (Exception )
+            {
+                return Json(false);
+            }
+        }
+        [HttpPost]
+        public JsonResult getAllSearch([FromBody]NhanSuTableGridRequest request)
+        {
+            return Json(nhansuRepo.GetAll(request));
+        }
+
+        [HttpPost]
+        public ActionResult Update([FromBody]NhanSu c)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     nhansuRepo.Update(c);
-                    return RedirectToAction("index");
+                    return Json(c);
                 }
             }
             catch (Exception ex)
@@ -73,24 +92,6 @@ namespace QuanLyCongVan.Controllers
                 ModelState.AddModelError(string.Empty, ex.Message);
             }
             return View(c);
-        }
-
-        public ActionResult Delete(int id)
-        {
-            try
-            {
-                nhansuRepo.Delete(id);
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-            return RedirectToAction("index");
-        }
-        [HttpPost]
-        public JsonResult getAllSearch([FromBody]NhanSuTableGridRequest request)
-        {
-            return Json(nhansuRepo.GetAll(request));
         }
     }
 }

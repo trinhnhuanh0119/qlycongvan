@@ -42,24 +42,27 @@ namespace QuanLyCongVan.Controllers
             var nguoidung = nguoidungRepo.GetById(id);
             return Json(nguoidung);
         }
-        [HttpGet]
+
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             try
             {
                 nguoidungRepo.Delete(id);
+                return Json(true);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                ModelState.AddModelError(string.Empty, ex.Message);
+                return Json(false);
             }
-            return RedirectToAction("index");
         }
+
         [HttpPost]
         public JsonResult getAllSearch([FromBody]NguoiDungTableGridRequest request)
         {
             return Json(nguoidungRepo.GetAll(request));
         }
+
         [HttpPost]
         public ActionResult Update([FromBody]NguoiDung c)
         {
@@ -68,7 +71,7 @@ namespace QuanLyCongVan.Controllers
                 if (ModelState.IsValid)
                 {
                     nguoidungRepo.Update(c);
-                    return View(c);
+                    return Json(c);
                 }
             }
             catch (Exception ex)

@@ -42,17 +42,18 @@ namespace QuanLyCongVan.Controllers
             return Json(chucvu);
         }
 
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             try
             {
                 chucvuRepo.Delete(id);
+                return Json(true);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                ModelState.AddModelError(string.Empty, ex.Message);
+                return Json(false);
             }
-            return RedirectToAction("index");
         }
 
         [HttpPost]

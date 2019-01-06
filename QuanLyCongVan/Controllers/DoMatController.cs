@@ -43,17 +43,19 @@ namespace QuanLyCongVan.Controllers
             return Json(domat);
         }
 
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             try
             {
                 domatRepo.Delete(id);
+                return Json(true);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                ModelState.AddModelError(string.Empty, ex.Message);
+                return Json(false);
             }
-            return RedirectToAction("index");
+            
         }
         [HttpPost]
         public JsonResult getAllSearch([FromBody]DoMatTableGridRequest request)

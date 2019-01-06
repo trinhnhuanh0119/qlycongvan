@@ -5,7 +5,6 @@
 
 <script src="~/ScriptController/CqbhScriptController.js"></script>
 <div class="main-container ace-save-state" id="main-container" ng-controller="CqbhJS">
-
     <div class="main-content">
         <div class="main-content-inner">
             <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -16,7 +15,6 @@
                     </li>
                     <li class="active">Thêm mới cơ quan ban hành</li>
                 </ul><!-- /.breadcrumb -->
-
                 <div class="nav-search" id="nav-search">
                     <form class="form-search">
                         <span class="input-icon">
@@ -26,19 +24,16 @@
                     </form>
                 </div><!-- /.nav-search -->
             </div>
-
             <div class="page-content">
                 <div class="ace-settings-container" id="ace-settings-container">
                     <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
-
                 <div class="page-header">
                     <h1>
                         Danh sách cơ quan ban hành
                     </h1>
                 </div><!-- /.page-header -->
-
                 <div class="row">
                     <div class="col-xs-12">
                         <!-- PAGE CONTENT BEGINS -->
@@ -67,20 +62,17 @@
                                 <td>{{sp.maCapCQBH}} </td>
                                 <td>
                                     <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" ng-click="onDelete(sp.id)"> <i class="fa fa-trash"></i></a>
+                                    <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         </table>
-
                         <div id="grid-pager"></div>
-
                         <!-- PAGE CONTENT ENDS -->
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.page-content -->
         </div>
     </div>
-
 
     @*Modal hển thị*@
     <div class="modal fade" id="confirm-status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -99,55 +91,47 @@
                             </div>
                         </div>
                         <div class="row">
-
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên cơ quan:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.tenCqbh" />
                             </div>
                         </div>
-
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.diaChi" />
                             </div>
                         </div>
-
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Điện thoại:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.dienThoai" />
                             </div>
                         </div>
-
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Fax:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.fax" />
                             </div>
                         </div>
-
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Email:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.email" />
                             </div>
                         </div>
-
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right"> Ghi chú:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.ghiChu" />
                             </div>
                         </div>
-
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên viết tắt:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.tenVietTat" />
                             </div>
                         </div>
-
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã cấp cơ quan:</label>
                             <div class="col-sm-9">
@@ -158,6 +142,25 @@
                     <div class="modal-footer no-border">
                         <a class="btn btn-success btn-xs btn-ok" ng-click="onCreate()"><i class="fa fa-check-square-o"></i> Lưu</a>
                         <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Đóng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="notifycal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm dv-modal" style="width:60%">
+            <div class="modal-content modal-xoa">
+                <div class="tab-content tab-content_xoa">
+                    <div class="modal-header no-padding widget-header-small">
+                        <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Xóa Thông Tin</h4>
+                    </div>
+                    <div>
+                        <p>Bạn chắc chắn muốn xóa thông tin này?</p>
+                    </div>
+                    <div class="modal-footer no-border">
+                        <a class="btn btn-success btn-xs btn-ok" ng-click="onDelete(idremove)"><i class="fa fa-check-square-o"></i> Đồng ý</a>
+                        <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Không</a>
                     </div>
                 </div>
             </div>

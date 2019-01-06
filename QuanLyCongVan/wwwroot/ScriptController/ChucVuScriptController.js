@@ -2,6 +2,7 @@
     function ($location, $scope, $routeParams, $http, $window, $timeout) {
 
         $scope.datagrid = [];
+        $scope.idremove = 0;
         $scope.SearchObject = {
             MaChucVu:'',
             TenChucVu:'',
@@ -42,9 +43,8 @@
             GetData();
         }
         ngInit();
-
         $scope.onCreate = function () {
-            if ($scope.model.id == ''|| $scope.model.id == null || $scope.model.id == 0) {
+            if ($scope.model.id == '' || $scope.model.id == null || $scope.model.id == 0) {
             $http({
                 method: 'POST',
                 url: '/ChucVu/Create',
@@ -54,9 +54,9 @@
             }).then(function successCallback(response) {
                 // Hàm thực thi khi chạy đúng và trả về kết quả
                 console.log(response);
-                $scope.model = response.data;
                 $("#confirm-status").modal('hide');
                 GetData();
+
             }, function errorCallback(response) {
                 // Hàm thực thi khi xảy ra lỗi
                     });
@@ -70,15 +70,14 @@
                 }).then(function successCallback(response) {
                     // Hàm thực thi khi chạy đúng và trả về kết quả
                     console.log(response);
-                    $scope.model = response.data;
                     $("#confirm-status").modal('hide');
                     GetData();
+
                 }, function errorCallback(response) {
                     // Hàm thực thi khi xảy ra lỗi
                 });
             }
         }
-
         $scope.onEdit = function (id) {
             $http({
                 method: 'GET',
@@ -96,8 +95,29 @@
                 // Hàm thực thi khi xảy ra lỗi
             });
         }
+
+        $scope.onDelete = function (id) {
+            $http({
+                method: 'Post',
+                url: '/ChucVu/Delete',
+                params: { id: id }
+            }).then(function successCallback(response) {
+                // Hàm thực thi khi chạy đúng và trả về kết quả
+                $("#notifycal").modal('hide');
+                GetData();
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
+
         $scope.show = function () {
             $scope.model = {};
             $("#confirm-status").modal('show');
+        }
+
+
+        $scope.confirmdelete = function (id) {
+            $scope.idremove = id;
+            $("#notifycal").modal('show');
         }
     });
