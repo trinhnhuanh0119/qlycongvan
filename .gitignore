@@ -3,3 +3,6 @@
 .vs/QuanLyCongVan/DesignTimeBuild/.dtbcache
 .vs/QuanLyCongVan/v15/.suo
 .vs/QuanLyCongVan/v15/Server/sqlite3/storage.ide-wal
+*.config
+.vs/config/applicationhost.config
+*.dll

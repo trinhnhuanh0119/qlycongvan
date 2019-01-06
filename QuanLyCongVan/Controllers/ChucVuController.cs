@@ -42,6 +42,24 @@ namespace QuanLyCongVan.Controllers
             return Json(chucvu);
         }
 
+        [HttpPost]
+        public ActionResult Edit(ChucVu c)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    chucvuRepo.Update(c);
+                    return RedirectToAction("index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return View(c);
+        }
+
         public ActionResult Delete(int id)
         {
             try
@@ -54,29 +72,10 @@ namespace QuanLyCongVan.Controllers
             }
             return RedirectToAction("index");
         }
-
         [HttpPost]
         public JsonResult getAllSearch([FromBody]ChucVuTableGridRequest request)
         {
             return Json(chucvuRepo.GetAll(request));
-        }
-
-        [HttpPost]
-        public ActionResult Update([FromBody]ChucVu c)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    chucvuRepo.Update(c);
-                    return Json(c);
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-            return View(c);
         }
     }
 }

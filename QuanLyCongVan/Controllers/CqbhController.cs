@@ -42,6 +42,24 @@ namespace QuanLyCongVan.Controllers
             return Json(cqbh);
         }
 
+        [HttpPost]
+        public ActionResult Edit(Cqbh c)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    cqbhRepo.Update(c);
+                    return RedirectToAction("index");
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+            return View(c);
+        }
+
         public ActionResult Delete(int id)
         {
             try
@@ -58,24 +76,6 @@ namespace QuanLyCongVan.Controllers
         public JsonResult getAllSearch([FromBody]CQBHTableGridRequest request)
         {
             return Json(cqbhRepo.GetAll(request));
-        }
-
-        [HttpPost]
-        public ActionResult Update([FromBody]Cqbh c)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    cqbhRepo.Update(c);
-                    return Json(c);
-                }
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.Message);
-            }
-            return View(c);
         }
     }
 }
