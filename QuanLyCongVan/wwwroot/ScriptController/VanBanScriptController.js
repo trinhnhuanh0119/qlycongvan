@@ -63,8 +63,8 @@
                 console.log(response);
                 $scope.datagrid = response.data;
                 //hàm thực hiện phân trang
-                if (response.data.lenght > 0) {
-                    $scope.pageCount = response.data[0].TongSo;
+                if (response.data.length > 0) {
+                    $scope.pageCount = response.data[0].tongSo;
                 } else {
                     $scope.pageCount = 0;
                 }
