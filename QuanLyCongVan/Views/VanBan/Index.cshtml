@@ -82,6 +82,14 @@
                                 </td>
                             </tr>
                         </table>
+                        <div>
+
+                            <ul uib-pagination total-items="pageCount"
+                                ng-model="currentPage"
+                                class="pagination-sm"
+                                ng-change="pagechaned()"
+                                items-per-page="PageSize"></ul>
+                        </div>
                         <div id="grid-pager"></div>
                         <!-- PAGE CONTENT ENDS -->
                     </div><!-- /.col -->

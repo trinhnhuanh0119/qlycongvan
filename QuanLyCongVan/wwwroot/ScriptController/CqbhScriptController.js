@@ -3,6 +3,9 @@
 
         $scope.datagrid = [];
         $scope.idremove = 0;
+        $scope.currentPage = 1;
+        $scope.PageSize = 5;
+        $scope.pageCount = 0;
         $scope.SearchObject = {
             MaCQBH: '',
             TenCQBH: '',
@@ -13,8 +16,8 @@
             GhiChu: '',
             TenVietTat: '',
             MaCapCQBH:'',
-            PageIndex: 1,
-            PageSize: 10
+            PageIndex: $scope.currentPage,
+            PageSize: 5
         };
         $scope.model = {
             Id: 0,
@@ -29,6 +32,12 @@
             MaCapCqbh:0
         };
 
+        //hàm gọi event next trang
+        $scope.pagechaned = function () {
+            $scope.SearchObject.PageIndex = $scope.currentPage;
+            GetData();
+        }
+
         var GetData = function () {
             $http({
                 method: 'POST',
@@ -40,7 +49,12 @@
                 // Hàm thực thi khi chạy đúng và trả về kết quả
                 console.log(response);
                 $scope.datagrid = response.data;
-
+                //hàm thực hiện phân trang
+                if (response.data.lenght > 0) {
+                    $scope.pageCount = response.data[0].TongSo;
+                } else {
+                    $scope.pageCount = 0;
+                }
             }, function errorCallback(response) {
                 // Hàm thực thi khi xảy ra lỗi
 
