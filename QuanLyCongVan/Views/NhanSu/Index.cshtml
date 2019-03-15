@@ -2,7 +2,6 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/_Layout.cshtml";
 }
-
 <script src="~/ScriptController/NhanSuScriptController.js"></script>
 <div class="main-container ace-save-state" id="main-container" ng-controller="NhanSuJS">
     <div class="main-content">
@@ -43,8 +42,6 @@
                                 <th>Tên</th>
                                 <th>Giới tính</th>
                                 <th>Ngày sinh</th>
-                                <th>Ảnh</th>
-                                <th>Ngày vào ngành</th>
                                 <th>Địa chỉ nhà</th>
                                 <th>Địa chỉ cơ quan</th>
                                 <th>Điện thoại</th>
@@ -56,8 +53,6 @@
                                 <td>{{sp.ten}} </td>
                                 <td>{{sp.gioiTinh}}</td>
                                 <td>{{sp.ngaySinh| date:"dd/MM/yyyy"}}</td>
-                                <td>{{sp.anh}} </td>
-                                <td>{{sp.ngayVaoNganh| date:"dd/MM/yyyy"}} </td>
                                 <td>{{sp.diaChiNr}} </td>
                                 <td>{{sp.diaChiCq}} </td>
                                 <td>{{sp.dienThoai}} </td>
@@ -99,88 +94,95 @@
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.maNhanSu" />
                             </div>
-                        </div>
+                        </div><br>
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Tên:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.ten" />
                             </div>
-                        </div>
+                        </div><br>
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Giới tính:</label>
-                            <div class="col-sm-9">
-                                <input type="checkbox" class="form-control" ng-model="model.gioiTinh" />
+                            <div class="col-sm-3">
+                                <input type="radio" name="gender" value="nam" ng-model="model.gioiTinh"> Nam
                             </div>
-                        </div>
+                            <div class="col-sm-3">
+                                <input type="radio" name="gender" value="nu" ng-model="model.gioiTinh"> Nữ
+                            </div>
+                        </div><br>
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Ngày sinh:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.ngaySinh" />
+                            <div class="col-sm-9" style="padding-left:10px !important">
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker9'>
+                                        <input type="text" class="form-control" ng-model="model.ngaySinh" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar">
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#datetimepicker9').datetimepicker({
+                                        viewMode: 'years'
+                                    });
+                                });
+                            </script>
                         </div>
-                        <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Ảnh:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.anh" />
-                            </div>
+                    </div><br>
+                    <div class="row">
+                        <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ nhà riêng:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" ng-model="model.diaChiNr" />
                         </div>
-                        <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Ngày vào ngành:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.ngayVaoNganh" />
-                            </div>
+                    </div><br>
+                    <div class="row">
+                        <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ cơ quan:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" ng-model="model.diaChiCq" />
                         </div>
-                        <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ nhà riêng:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.diaChiNr" />
-                            </div>
+                    </div><br>
+                    <div class="row">
+                        <label class="col-sm-3 control-label no-padding-right text-right">Điện thoại:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" ng-model="model.dienThoai" />
                         </div>
-                        <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ cơ quan:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.diaChiCq" />
-                            </div>
+                    </div><br>
+                    <div class="row">
+                        <label class="col-sm-3 control-label no-padding-right text-right">Mã phòng:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" ng-model="model.maPhong" />
                         </div>
-                        <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Điện thoại:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.dienThoai" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Mã phòng:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.maPhong" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer no-border">
-                        <a class="btn btn-success btn-xs btn-ok" ng-click="onCreate()"><i class="fa fa-check-square-o"></i> Lưu</a>
-                        <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Đóng</a>
-                    </div>
+                    </div><br>
+                </div>
+                <div class="modal-footer no-border">
+                    <a class="btn btn-success btn-xs btn-ok" ng-click="onCreate()"><i class="fa fa-check-square-o"></i> Lưu</a>
+                    <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Đóng</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="notifycal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm dv-modal" style="width:60%">
-            <div class="modal-content modal-xoa">
-                <div class="tab-content tab-content_xoa">
-                    <div class="modal-header no-padding widget-header-small">
-                        <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Xóa Thông Tin</h4>
-                    </div>
-                    <div>
-                        <p>Bạn chắc chắn muốn xóa thông tin này?</p>
-                    </div>
-                    <div class="modal-footer no-border">
-                        <a class="btn btn-success btn-xs btn-ok" ng-click="onDelete(idremove)"><i class="fa fa-check-square-o"></i> Đồng ý</a>
-                        <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Không</a>
-                    </div>
+<div class="modal fade" id="notifycal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm dv-modal" style="width:60%">
+        <div class="modal-content modal-xoa">
+            <div class="tab-content tab-content_xoa">
+                <div class="modal-header no-padding widget-header-small">
+                    <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Xóa Thông Tin</h4>
+                </div>
+                <div>
+                    <p>Bạn chắc chắn muốn xóa thông tin này?</p>
+                </div>
+                <div class="modal-footer no-border">
+                    <a class="btn btn-success btn-xs btn-ok" ng-click="onDelete(idremove)"><i class="fa fa-check-square-o"></i> Đồng ý</a>
+                    <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Không</a>
                 </div>
             </div>
         </div>
     </div>
-</div><!-- /.main-content -->
+</div>
+    </div><!-- /.main-content -->

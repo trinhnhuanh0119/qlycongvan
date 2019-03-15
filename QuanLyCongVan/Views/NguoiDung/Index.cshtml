@@ -87,26 +87,28 @@
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.tenTaiKhoan" />
                             </div>
-                        </div>
+                        </div><br>
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">mật khẩu:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.matKhau" />
                             </div>
-                        </div>
+                        </div><br>
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">kích hoạt:</label>
-                            <div class="col-sm-9">
-                                <input type="checkbox" class="form-control" ng-model="model.kichHoat" />
-
+                            <div class="col-sm-3">
+                                <input type="radio" name="gender" value="kichhoat" ng-model="model.kichHoat" /> Kích Hoạt
                             </div>
-                        </div>
+                            <div class="col-sm-3">
+                                <input type="radio" name="gender" value="bokichhoat" ng-model="model.kichHoat" /> Bỏ Kích Hoạt
+                            </div>
+                        </div><br>
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã nhân sự:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.maNhanSu" />
                             </div>
-                        </div>
+                        </div><br>
                     </div>
                     <div class="modal-footer no-border">
                         <a class="btn btn-success btn-xs btn-ok" ng-click="onCreate()"><i class="fa fa-check-square-o"></i> Lưu</a>
