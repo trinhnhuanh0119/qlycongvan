@@ -40,7 +40,10 @@
             $scope.SearchObject.PageIndex = $scope.currentPage;
             GetData();
         }
-
+        //hàm gọi event search
+        $scope.sort = function () {
+            GetData();
+        }
         var GetData = function () {
             $http({
                 method: 'POST',
@@ -83,6 +86,7 @@
                 // Hàm thực thi khi chạy đúng và trả về kết quả
                 console.log(response);
                 $("#confirm-status").modal('hide');
+                $.notify("Thêm thành công!", "success");
                 GetData();
             }, function errorCallback(response) {
                 // Hàm thực thi khi xảy ra lỗi
@@ -114,6 +118,7 @@
                 // Hàm thực thi khi chạy đúng và trả về kết quả
                 console.log(response);
                 $("#confirm-status").modal('show');
+                $.notify("Sửa thành công!", "success");
                 $scope.model = response.data;
 
 
@@ -131,6 +136,7 @@
             }).then(function successCallback(response) {
                 // Hàm thực thi khi chạy đúng và trả về kết quả
                 $("#notifycal").modal('hide');
+                $.notify("Xóa thành công!", "success");
                 GetData();
             }, function errorCallback(response) {
                 // Hàm thực thi khi xảy ra lỗi
