@@ -3,6 +3,7 @@
     Layout = "~/Views/_Layout.cshtml";
 }
 
+
 <script src="~/ScriptController/ChucVuScriptController.js"></script>
 <div class="main-container ace-save-state" id="main-container" ng-controller="ChucVuJS">
     <div class="main-content">
@@ -24,51 +25,56 @@
                     </form>
                 </div><!-- /.nav-search -->
             </div>
-            <div class="page-content">
+            <div class="page-content text-right" style="padding-bottom:3em;">
                 <div class="ace-settings-container" id="ace-settings-container">
-                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới <i class="glyphicon glyphicon-plus"></i></button>
+                    <br />
+                    <br />
+                    <button class="btn btn-sm btn-primary " ng-click="export()">Export Exel <i class="glyphicon glyphicon-download-alt"></i></button>
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
-                <div class="page-header">
-                    <h1>
-                        Danh sách chức vụ
-                    </h1>
-                </div><!-- /.page-header -->
-                <div class="row">
-                    <div class="col-xs-12">
-                        <!-- PAGE CONTENT BEGINS -->
-                        <table class="table table-responsive table-bordered" id="grid-table">
-                            <tr>
-                                <th>Mã số</th>
-                                <th>Tên </th>
-                                <th>Hệ số </th>
-                                <th>Mô tả</th>
-                                <th>Thao tác</th>
-                            </tr>
-                            <tr ng-repeat="sp in datagrid">
-                                <td>{{sp.maChucVu}} </td>
-                                <td>{{sp.tenChucVu}} </td>
-                                <td> {{sp.heSoChucVu}}</td>
-                                <td>{{sp.moTa}} </td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-                        </table>
-                        <div>
+            </div>
+            <iframe id="downloadfile" style="display:none"></iframe>
+            <div class="page-header">
+                <h1>
+                    Danh sách chức vụ
+                </h1>
+            </div><!-- /.page-header -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <table class="table table-responsive table-bordered" id="grid-table">
+                        <tr>
+                            <th>Mã số</th>
+                            <th>Tên </th>
+                            <th>Hệ số </th>
+                            <th>Mô tả</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        <tr ng-repeat="sp in datagrid">
+                            <td>{{sp.maChucVu}} </td>
+                            <td>{{sp.tenChucVu}} </td>
+                            <td> {{sp.heSoChucVu}}</td>
+                            <td>{{sp.moTa}} </td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                    <div>
 
-                            <ul uib-pagination total-items="pageCount"
-                                ng-model="currentPage"
-                                class="pagination-sm"
-                                ng-change="pagechaned()"
-                                items-per-page="PageSize"></ul>
-                        </div>
-                        <div id="grid-pager"></div>
-                        <!-- PAGE CONTENT ENDS -->
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.page-content -->
+                        <ul uib-pagination total-items="pageCount"
+                            ng-model="currentPage"
+                            class="pagination-sm"
+                            ng-change="pagechaned()"
+                            items-per-page="PageSize"></ul>
+                    </div>
+                    <div id="grid-pager"></div>
+                    <!-- PAGE CONTENT ENDS -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
         </div>
     </div>
 

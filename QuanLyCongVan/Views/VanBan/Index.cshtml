@@ -3,6 +3,7 @@
     Layout = "~/Views/_Layout.cshtml";
 }
 
+
 <script src="~/ScriptController/VanBanScriptController.js"></script>
 <div class="main-container ace-save-state" id="main-container" ng-controller="VanBanJS">
     <div class="main-content">
@@ -27,74 +28,77 @@
                     </form>
                 </div><!-- /.nav-search -->
             </div>
-            <div class="page-content">
+            <div class="page-content text-right" style="padding-bottom:3em;">
                 <div class="ace-settings-container" id="ace-settings-container">
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới <i class="glyphicon glyphicon-plus"></i></button>
+                    <br />
+                    <br />
+                    <button class="btn btn-sm btn-primary " ng-click="export()">Export Exel <i class="glyphicon glyphicon-download-alt"></i></button>
+                </div> <!-- /.ace-settings-box -->
+            </div><!-- /.ace-settings-container -->
+            <iframe id="downloadfile" style="display:none"></iframe>
+            <div class="page-header">
+                <h1>
+                    Danh sách văn bản
+                </h1>
+            </div><!-- /.page-header -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <table class="table table-responsive table-bordered" id="grid-table">
+                        <tr>
+                            <th>Văn bản đi đến</th>
+                            <th>Mã loại văn bản</th>
+                            <th>Mã cơ quan ban hành</th>
+                            <th>Số văn bản</th>
+                            <th>Số đến</th>
+                            <th>Ngày đến</th>
+                            <th>Độ mật</th>
+                            <th>Độ khẩn</th>
+                            <th>Trích yếu</th>
+                            <th>Nơi nhận</th>
+                            <th>Ngày ký</th>
+                            <th>Người ký</th>
+                            <th>Kết quả xử lý</th>
+                            <th>File đính kèm</th>
+                            <th>Hạn xử lý</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        <tr ng-repeat="sp in datagrid">
+                            <td>{{sp.vbdiDen}} </td>
+                            <td>{{sp.maLoaiVb}} </td>
+                            <td>{{sp.maCqbh}} </td>
+                            <td>{{sp.soVb}} </td>
+                            <td>{{sp.soDen}} </td>
+                            <td>{{sp.ngayDen| date:"dd/MM/yyyy"}} </td>
+                            <td>{{sp.doMat}} </td>
+                            <td>{{sp.doKhan}} </td>
+                            <td>{{sp.trichYeu}} </td>
+                            <td>{{sp.noiNhan}} </td>
+                            <td>{{sp.ngayKy | date:"dd/MM/yyyy"}} </td>
+                            <td>{{sp.nguoiKy}} </td>
+                            <td>{{sp.ketQuaXuLy}} </td>
+                            <td> {{sp.fileDinhKem}}</td>
+                            <td>{{sp.hanXuLy| date:"dd/MM/yyyy"}} </td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                    <div>
 
-                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
-                    <!-- /.ace-settings-box -->
-                </div><!-- /.ace-settings-container -->
-                <div class="page-header">
-                    <h1>
-                        Danh sách văn bản
-                    </h1>
-                </div><!-- /.page-header -->
-                <div class="row">
-                    <div class="col-xs-12">
-                        <!-- PAGE CONTENT BEGINS -->
-                        <table class="table table-responsive table-bordered" id="grid-table">
-                            <tr>
-                                <th>Văn bản đi đến</th>
-                                <th>Mã loại văn bản</th>
-                                <th>Mã cơ quan ban hành</th>
-                                <th>Số văn bản</th>
-                                <th>Số đến</th>
-                                <th>Ngày đến</th>
-                                <th>Độ mật</th>
-                                <th>Độ khẩn</th>
-                                <th>Trích yếu</th>
-                                <th>Nơi nhận</th>
-                                <th>Ngày ký</th>
-                                <th>Người ký</th>
-                                <th>Kết quả xử lý</th>
-                                <th>File đính kèm</th>
-                                <th>Hạn xử lý</th>
-                                <th>Thao tác</th>
-                            </tr>
-                            <tr ng-repeat="sp in datagrid">
-                                <td>{{sp.vbdiDen}} </td>
-                                <td>{{sp.maLoaiVb}} </td>
-                                <td>{{sp.maCqbh}} </td>
-                                <td>{{sp.soVb}} </td>
-                                <td>{{sp.soDen}} </td>
-                                <td>{{sp.ngayDen| date:"dd/MM/yyyy"}} </td>
-                                <td>{{sp.doMat}} </td>
-                                <td>{{sp.doKhan}} </td>
-                                <td>{{sp.trichYeu}} </td>
-                                <td>{{sp.noiNhan}} </td>
-                                <td>{{sp.ngayKy | date:"dd/MM/yyyy"}} </td>
-                                <td>{{sp.nguoiKy}} </td>
-                                <td>{{sp.ketQuaXuLy}} </td>
-                                <td> {{sp.fileDinhKem}}</td>
-                                <td>{{sp.hanXuLy| date:"dd/MM/yyyy"}} </td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-                        </table>
-                        <div>
-
-                            <ul uib-pagination total-items="pageCount"
-                                ng-model="currentPage"
-                                class="pagination-sm"
-                                ng-change="pagechaned()"
-                                items-per-page="PageSize"></ul>
-                        </div>
-                        <div id="grid-pager"></div>
-                        <!-- PAGE CONTENT ENDS -->
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.page-content -->
+                        <ul uib-pagination total-items="pageCount"
+                            ng-model="currentPage"
+                            class="pagination-sm"
+                            ng-change="pagechaned()"
+                            items-per-page="PageSize"></ul>
+                    </div>
+                    <div id="grid-pager"></div>
+                    <!-- PAGE CONTENT ENDS -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
         </div>
     </div>
 

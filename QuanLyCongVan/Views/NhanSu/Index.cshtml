@@ -2,6 +2,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/_Layout.cshtml";
 }
+
 <script src="~/ScriptController/NhanSuScriptController.js"></script>
 <div class="main-container ace-save-state" id="main-container" ng-controller="NhanSuJS">
     <div class="main-content">
@@ -23,62 +24,64 @@
                     </form>
                 </div><!-- /.nav-search -->
             </div>
-            <div class="page-content">
+            <div class="page-content text-right" style="padding-bottom:3em;">
                 <div class="ace-settings-container" id="ace-settings-container">
-                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
-                    <!-- /.ace-settings-box -->
-                </div><!-- /.ace-settings-container -->
-                <div class="page-header">
-                    <h1>
-                        Danh sách nhân sự
-                    </h1>
-                </div><!-- /.page-header -->
-                <div class="row">
-                    <div class="col-xs-12">
-                        <!-- PAGE CONTENT BEGINS -->
-                        <table class="table table-responsive table-bordered" id="grid-table">
-                            <tr>
-                                <th>Mã </th>
-                                <th>Tên</th>
-                                <th>Giới tính</th>
-                                <th>Ngày sinh</th>
-                                <th>Địa chỉ nhà</th>
-                                <th>Địa chỉ cơ quan</th>
-                                <th>Điện thoại</th>
-                                <th>Mã phòng</th>
-                                <th>Thao tác</th>
-                            </tr>
-                            <tr ng-repeat="sp in datagrid">
-                                <td>{{sp.maNhanSu}} </td>
-                                <td>{{sp.ten}} </td>
-                                <td>{{sp.gioiTinh}}</td>
-                                <td>{{sp.ngaySinh| date:"dd/MM/yyyy"}}</td>
-                                <td>{{sp.diaChiNr}} </td>
-                                <td>{{sp.diaChiCq}} </td>
-                                <td>{{sp.dienThoai}} </td>
-                                <td>{{sp.maPhong}} </td>
-                                <td>
-                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
-                                </td>
-                            </tr>
-                        </table>
-                        <div>
+                    <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới <i class="glyphicon glyphicon-plus"></i></button>
+                    <br />
+                    <br />
+                    <button class="btn btn-sm btn-primary " ng-click="export()">Export Exel <i class="glyphicon glyphicon-download-alt"></i></button>
+                </div><!-- /.ace-settings-box -->
+            </div><!-- /.ace-settings-container -->
+            <iframe id="downloadfile" style="display:none"></iframe>
+            <div class="page-header">
+                <h1>
+                    Danh sách nhân sự
+                </h1>
+            </div><!-- /.page-header -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <table class="table table-responsive table-bordered" id="grid-table">
+                        <tr>
+                            <th>Mã </th>
+                            <th>Tên</th>
+                            <th>Giới tính</th>
+                            <th>Ngày sinh</th>
+                            <th>Địa chỉ nhà</th>
+                            <th>Địa chỉ cơ quan</th>
+                            <th>Điện thoại</th>
+                            <th>Mã phòng</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        <tr ng-repeat="sp in datagrid">
+                            <td>{{sp.maNhanSu}} </td>
+                            <td>{{sp.ten}} </td>
+                            <td>{{sp.gioiTinh}}</td>
+                            <td>{{sp.ngaySinh| date:"dd/MM/yyyy"}}</td>
+                            <td>{{sp.diaChiNr}} </td>
+                            <td>{{sp.diaChiCq}} </td>
+                            <td>{{sp.dienThoai}} </td>
+                            <td>{{sp.maPhong}} </td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                    <div>
 
-                            <ul uib-pagination total-items="pageCount"
-                                ng-model="currentPage"
-                                class="pagination-sm"
-                                ng-change="pagechaned()"
-                                items-per-page="PageSize"></ul>
-                        </div>
-                        <div id="grid-pager"></div>
-                        <!-- PAGE CONTENT ENDS -->
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.page-content -->
-        </div>
+                        <ul uib-pagination total-items="pageCount"
+                            ng-model="currentPage"
+                            class="pagination-sm"
+                            ng-change="pagechaned()"
+                            items-per-page="PageSize"></ul>
+                    </div>
+                    <div id="grid-pager"></div>
+                    <!-- PAGE CONTENT ENDS -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
     </div>
-
     @*Modal hển thị*@
     <div class="modal fade" id="confirm-status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm dv-modal" style="width:60%">
@@ -164,25 +167,23 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="modal fade" id="notifycal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm dv-modal" style="width:60%">
-        <div class="modal-content modal-xoa">
-            <div class="tab-content tab-content_xoa">
-                <div class="modal-header no-padding widget-header-small">
-                    <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Xóa Thông Tin</h4>
-                </div>
-                <div>
-                    <p>Bạn chắc chắn muốn xóa thông tin này?</p>
-                </div>
-                <div class="modal-footer no-border">
-                    <a class="btn btn-success btn-xs btn-ok" ng-click="onDelete(idremove)"><i class="fa fa-check-square-o"></i> Đồng ý</a>
-                    <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Không</a>
+    <div class="modal fade" id="notifycal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm dv-modal" style="width:60%">
+            <div class="modal-content modal-xoa">
+                <div class="tab-content tab-content_xoa">
+                    <div class="modal-header no-padding widget-header-small">
+                        <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Xóa Thông Tin</h4>
+                    </div>
+                    <div>
+                        <p>Bạn chắc chắn muốn xóa thông tin này?</p>
+                    </div>
+                    <div class="modal-footer no-border">
+                        <a class="btn btn-success btn-xs btn-ok" ng-click="onDelete(idremove)"><i class="fa fa-check-square-o"></i> Đồng ý</a>
+                        <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Không</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-    </div><!-- /.main-content -->
+</div><!-- /.main-content -->
