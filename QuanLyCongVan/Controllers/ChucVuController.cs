@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Aspose.Cells;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using QuanLyCongVan.Model.Models;
 using QuanLyCongVan.Repository;
@@ -12,6 +15,11 @@ namespace QuanLyCongVan.Controllers
     public class ChucVuController : Controller
     {
         ChucVuRepository chucvuRepo = new ChucVuRepository();
+        private IHostingEnvironment _env;
+        public ChucVuController(IHostingEnvironment env)
+        {
+            _env = env;
+        }
         public ActionResult Index()
         {
             var listChucVu = chucvuRepo.GetAll();
@@ -50,7 +58,7 @@ namespace QuanLyCongVan.Controllers
                 chucvuRepo.Delete(id);
                 return Json(true);
             }
-            catch (Exception )
+            catch (Exception)
             {
                 return Json(false);
             }
@@ -79,5 +87,6 @@ namespace QuanLyCongVan.Controllers
             }
             return View(c);
         }
+        
     }
 }

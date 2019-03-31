@@ -30,6 +30,20 @@
             GetData();
         }
 
+        $scope.export = function () {
+            $http({
+                method: 'POST',
+                url: '/ChucVu/ExportExel',
+                data: '',
+                dataType: ""
+            }).then(function successCallback(response) {
+                $("#downloadfile").attr('src', response.data)
+            },
+                function errorCallback(response) {
+                    // Hàm thực thi khi xảy ra lỗi
+                });
+        }
+
         var GetData = function () {
             $http({
                 method: 'POST',

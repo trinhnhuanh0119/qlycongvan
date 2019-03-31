@@ -30,8 +30,24 @@
         $scope.sort = function () {
             GetData();
         }
+
+        $scope.export = function () {
+            $http({
+                method: 'POST',
+                url: '/CapCQBH/ExportExel',
+                data: '',
+                dataType: ""
+            }).then(function successCallback(response) {
+                $("#downloadfile").attr('src', response.data)
+            },
+                function errorCallback(response) {
+                    // Hàm thực thi khi xảy ra lỗi
+                });
+        }
+
         var GetData = function () {
             $http({
+
                 method: 'POST',
                 url: '/CapCQBH/getAllSearch',
                 data: JSON.stringify($scope.SearchObject),
