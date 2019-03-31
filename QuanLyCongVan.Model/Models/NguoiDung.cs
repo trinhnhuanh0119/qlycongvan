@@ -11,4 +11,11 @@ namespace QuanLyCongVan.Model.Models
         public bool? KichHoat { get; set; }
         public string MaNhanSu { get; set; }
     }
+    public class NguoiDungInsert
+    {
+        public string tenTaiKhoan { get; set; }
+        public string matKhau { get; set; }
+        public int? kichHoat { get; set; }
+        public string maNhanSu { get; set; }
+    }
 }

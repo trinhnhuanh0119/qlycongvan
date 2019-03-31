@@ -24,24 +24,22 @@ namespace QuanLyCongVan.Controllers
             try
             {
                 NhanSu nhanSu = new NhanSu();
-                nhanSu.Anh = c.Anh;
-                nhanSu.Dem = c.Dem;
-                nhanSu.DiaChiCq = c.DiaChiCq;
-                nhanSu.DiaChiNr = c.DiaChiNr;
-                nhanSu.DienThoai = c.DienThoai;
-                nhanSu.GioiTinh = c.GioiTinh;
-                nhanSu.Ho = c.Ho;
-                nhanSu.Ten = c.Ten;
-                nhanSu.TenVietTat = c.TenVietTat;
-                nhanSu.MaNhanSu = c.MaNhanSu;
-                nhanSu.MaPhong = c.MaPhong;
-                if(!string.IsNullOrEmpty(c.NgaySinh))
-                nhanSu.NgaySinh = DateTime.ParseExact(c.NgaySinh, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
-                if(!string.IsNullOrEmpty(c.NgayVaoNganh))
-                nhanSu.NgayVaoNganh = DateTime.ParseExact(c.NgayVaoNganh, "dd/MM/yyyy", System.Globalization.CultureInfo.CurrentCulture);
+                nhanSu.DiaChiCq = c.diaChiCq;
+                nhanSu.DiaChiNr = c.diaChiNr;
+                nhanSu.DienThoai = c.dienThoai;
+                if (c.gioiTinh != null)
+                {
+                    nhanSu.GioiTinh = Convert.ToBoolean(c.gioiTinh);
+                }
+
+                nhanSu.Ten = c.ten;
+                nhanSu.MaNhanSu = c.maNhanSu;
+                nhanSu.MaPhong = c.maPhong;
+                if (!string.IsNullOrEmpty(c.ngaySinh))
+                    nhanSu.NgaySinh = Convert.ToDateTime(c.ngaySinh);
                 nhansuRepo.Create(nhanSu);
-                    return Json(c);
-                
+                return Json(c);
+
             }
             catch (Exception ex)
             {
@@ -65,7 +63,7 @@ namespace QuanLyCongVan.Controllers
                 nhansuRepo.Delete(id);
                 return Json(true);
             }
-            catch (Exception )
+            catch (Exception)
             {
                 return Json(false);
             }
@@ -93,5 +91,12 @@ namespace QuanLyCongVan.Controllers
             }
             return View(c);
         }
+
+        [HttpGet]
+        public ActionResult GetDropDowns() {
+            return Json(nhansuRepo.GetDropDowns());
+        }
+
+
     }
 }

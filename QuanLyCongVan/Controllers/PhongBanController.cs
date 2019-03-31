@@ -79,5 +79,11 @@ namespace QuanLyCongVan.Controllers
             }
             return View(c);
         }
+
+        [HttpGet]
+        public ActionResult DropPB()
+        {
+            return Json(phongbanRepo.GetDropDowns());
+        }
     }
 }

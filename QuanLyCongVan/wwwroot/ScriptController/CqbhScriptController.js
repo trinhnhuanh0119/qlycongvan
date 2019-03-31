@@ -3,6 +3,7 @@
 
         $scope.datagrid = [];
         $scope.idremove = 0;
+        $scope.listCCQBH = [];
         $scope.currentPage = 1;
         $scope.PageSize = 5;
         $scope.pageCount = 0;
@@ -66,9 +67,21 @@
             });
 
         }
+        var GetDropDowns = function () {
+            $http({
+                method: 'GET',
+                url: '/CapCqbh/GetDropDowns'
 
+            }).then(function successCallback(response) {
+                $scope.listCCQBH = response.data;
+
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
         ngInit = function () {
             GetData();
+            GetDropDowns();
         }
         ngInit();
 

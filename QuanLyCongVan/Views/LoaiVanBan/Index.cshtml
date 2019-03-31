@@ -103,10 +103,14 @@
                                 <input type="text" class="form-control" ng-model="model.tenVietTat" />
                             </div>
                         </div><br>
-                        <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Kiểu văn bản:</label>
+                        <div class="row"><label class="col-sm-3 control-label no-padding-right text-right">Kiểu văn bản:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.kieuVanBan" />
+                                <div class="col-sm-3" style="font-size:15px">
+                                    <input type="radio" name="gender" value="1" ng-model="model.kieuVanBan"> Văn Bản Đi
+                                </div>
+                                <div class="col-sm-3" style="font-size:15px">
+                                    <input type="radio" name="gender" value="0" ng-model="model.kieuVanBan"> Văn Bản Đến
+                                </div>
                             </div>
                         </div><br>
                     </div>

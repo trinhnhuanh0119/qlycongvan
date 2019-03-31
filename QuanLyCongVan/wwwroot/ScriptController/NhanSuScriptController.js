@@ -3,6 +3,7 @@
 
         $scope.datagrid = [];
         $scope.idremove = 0;
+        $scope.listPB = [];
         $scope.currentPage = 1;
         $scope.PageSize = 5;
         $scope.pageCount = 0;
@@ -69,25 +70,38 @@
 
         }
 
+        var GetDropDowns = function () {
+            $http({
+                method: 'GET',
+                url: '/PhongBan/DropPB'
+
+            }).then(function successCallback(response) {
+                $scope.listPB = response.data;
+
+            }, function errorCallback(response) {
+                // Hàm thực thi khi xảy ra lỗi
+            });
+        }
         ngInit = function () {
             GetData();
+            GetDropDowns();
         }
         ngInit();
 
         $scope.onCreate = function () {
             if ($scope.model.id == '' || $scope.model.id == null || $scope.model.id == 0) {
-            $http({
-                method: 'POST',
-                url: '/NhanSu/Create',
-                data: JSON.stringify($scope.model),
-                dataType: "json"
-
-            }).then(function successCallback(response) {
+                //$http({
+                //    method: 'POST',
+                //    url: '/NhanSu/Create',
+                //    data: {$scope.model },
+                //dataType: "json"
+                $http.post('/NhanSu/Create', JSON.stringify($scope.model)).then(function successCallback(response) {
                 // Hàm thực thi khi chạy đúng và trả về kết quả
                 console.log(response);
                 $("#confirm-status").modal('hide');
                 $.notify("Thêm thành công!", "success");
-                GetData();
+                    GetData();
+
             }, function errorCallback(response) {
                 // Hàm thực thi khi xảy ra lỗi
                     });
@@ -95,7 +109,7 @@
                 $http({
                     method: 'POST',
                     url: '/NhanSu/Update',
-                    data: JSON.stringify($scope.model),
+                    data: {c:$scope.model},
                     dataType: "json"
 
                 }).then(function successCallback(response) {
@@ -152,4 +166,5 @@
             $scope.idremove = id;
             $("#notifycal").modal('show');
         }
+
     });

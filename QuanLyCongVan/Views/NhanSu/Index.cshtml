@@ -106,11 +106,11 @@
                         </div><br>
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Giới tính:</label>
-                            <div class="col-sm-3">
-                                <input type="radio" name="gender" value="nam" ng-model="model.gioiTinh"> Nam
+                            <div class="col-sm-3" style="font-size:15px">
+                                <input type="radio" name="gender" value="1" ng-model="model.gioiTinh"> Nam
                             </div>
-                            <div class="col-sm-3">
-                                <input type="radio" name="gender" value="nu" ng-model="model.gioiTinh"> Nữ
+                            <div class="col-sm-3" style="font-size:15px">
+                                <input type="radio" name="gender" value="0" ng-model="model.gioiTinh"> Nữ
                             </div>
                         </div><br>
                         <div class="row">
@@ -133,32 +133,34 @@
                                     });
                                 });
                             </script>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ nhà riêng:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" ng-model="model.diaChiNr" />
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ cơ quan:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" ng-model="model.diaChiCq" />
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <label class="col-sm-3 control-label no-padding-right text-right">Điện thoại:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" ng-model="model.dienThoai" />
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <label class="col-sm-3 control-label no-padding-right text-right">Mã phòng:</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" ng-model="model.maPhong" />
-                        </div>
-                    </div><br>
+                        </div><br>
+                        <div class="row">
+                            <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ nhà riêng:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="model.diaChiNr" />
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <label class="col-sm-3 control-label no-padding-right text-right">Địa chỉ cơ quan:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="model.diaChiCq" />
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <label class="col-sm-3 control-label no-padding-right text-right">Điện thoại:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="model.dienThoai" />
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <label class="col-sm-3 control-label no-padding-right text-right">Mã phòng:</label>
+                            <div class="col-sm-9">
+                                <select class="form-control"  ng-model="model.maPhong">
+                                    <option ng-repeat="sp in listPB" value="{{sp.id}}">{{sp.text}}</option>
+                                </select>
+                            </div>
+                        </div><br>
+                    </div>
                 </div>
                 <div class="modal-footer no-border">
                     <a class="btn btn-success btn-xs btn-ok" ng-click="onCreate()"><i class="fa fa-check-square-o"></i> Lưu</a>

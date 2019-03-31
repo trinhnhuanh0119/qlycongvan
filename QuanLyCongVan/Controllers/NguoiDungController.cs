@@ -12,6 +12,7 @@ namespace QuanLyCongVan.Controllers
     public class NguoiDungController : Controller
     {
         NguoiDungRepository nguoidungRepo = new NguoiDungRepository();
+        NhanSuRepository nhanSuRepository = new NhanSuRepository();
         public ActionResult Index()
         {
             var listNguoiDung = nguoidungRepo.GetAll();
@@ -19,15 +20,22 @@ namespace QuanLyCongVan.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create([FromBody]NguoiDung c)
+        public ActionResult Create([FromBody]NguoiDungInsert c)
         {
             try
             {
-                if (ModelState.IsValid)
+
+                NguoiDung nguoiDung = new NguoiDung();
+                nguoiDung.TenTaiKhoan = c.tenTaiKhoan;
+                nguoiDung.MatKhau = c.matKhau;
+                if(c.kichHoat != null)
                 {
-                    nguoidungRepo.Create(c);
-                    return Json(c);
+                    nguoiDung.KichHoat = Convert.ToBoolean(c.kichHoat);
                 }
+                nguoiDung.MaNhanSu = c.maNhanSu;
+                nguoidungRepo.Create(nguoiDung);
+                return Json(c);
+                
             }
             catch (Exception ex)
             {
@@ -80,5 +88,11 @@ namespace QuanLyCongVan.Controllers
             }
             return View(c);
         }
+        [HttpGet]
+        public ActionResult DropNS()
+        {
+            return Json(nhanSuRepository.GetDropDowns());
+        }
     }
 }
+
