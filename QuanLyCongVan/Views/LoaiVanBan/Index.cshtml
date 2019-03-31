@@ -30,46 +30,47 @@
                     <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới <i class="glyphicon glyphicon-plus"></i></button>
                 </div><!-- /.ace-settings-box -->
             </div><!-- /.ace-settings-container -->
-            <div class="page-header">
-                <h1>
-                    Danh sách loại văn bản
-                </h1>
-            </div><!-- /.page-header -->
-            <div class="row">
-                <div class="col-xs-12">
-                    <!-- PAGE CONTENT BEGINS -->
-                    <table class="table table-responsive table-bordered" id="grid-table">
-                        <tr>
-                            <th>Mã loại</th>
-                            <th>Tên</th>
-                            <th>Tên viết tắt</th>
-                            <th>Kiểu văn bản</th>
-                            <th>Thao tác</th>
-                        </tr>
-                        <tr ng-repeat="sp in datagrid">
-                            <td>{{sp.maLoaiVB}} </td>
-                            <td>{{sp.tenLoaiVB}} </td>
-                            <td>{{sp.tenVietTat}} </td>
-                            <td>{{sp.kieuVanBan}} </td>
-                            <td>
-                                <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
-                                <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
-                        </tr>
-                    </table>
-                    <div>
+            <div style="margin-left:20px; margin-right:20px">
+                <div class="page-header">
+                    <h1>
+                        Danh sách loại văn bản
+                    </h1>
+                </div><!-- /.page-header -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <table class="table table-responsive table-bordered" id="grid-table">
+                            <tr>
+                                <th>Mã loại</th>
+                                <th>Tên</th>
+                                <th>Tên viết tắt</th>
+                                <th>Kiểu văn bản</th>
+                                <th>Thao tác</th>
+                            </tr>
+                            <tr ng-repeat="sp in datagrid">
+                                <td>{{sp.maLoaiVB}} </td>
+                                <td>{{sp.tenLoaiVB}} </td>
+                                <td>{{sp.tenVietTat}} </td>
+                                <td>{{sp.kieuVanBan}} </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
+                            </tr>
+                        </table>
+                        <div>
 
-                        <ul uib-pagination total-items="pageCount"
-                            ng-model="currentPage"
-                            class="pagination-sm"
-                            ng-change="pagechaned()"
-                            items-per-page="PageSize"></ul>
-                    </div>
-                    <div id="grid-pager"></div>
-                    <!-- PAGE CONTENT ENDS -->
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.page-content -->
-    </div>
+                            <ul uib-pagination total-items="pageCount"
+                                ng-model="currentPage"
+                                class="pagination-sm"
+                                ng-change="pagechaned()"
+                                items-per-page="PageSize"></ul>
+                        </div>
+                        <div id="grid-pager"></div>
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row --></div>
+            </div><!-- /.page-content -->
+        </div>
 
     @*Modal hển thị*@
     <div class="modal fade" id="confirm-status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -26,65 +26,64 @@
                 </div><!-- /.nav-search -->
             </div>
             <div class="page-content text-right" style="padding-bottom:3em;">
-                <div class="ace-settings-container" id="ace-settings-container">
+                <div class="ace-settings-container row" id="ace-settings-container">
                     <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới <i class="glyphicon glyphicon-plus"></i></button>
-                    <br />
-                    <br />
                     <button class="btn btn-sm btn-primary " ng-click="export()">Export Exel <i class="glyphicon glyphicon-download-alt"></i></button>
                 </div> <!-- /.ace-settings-box -->
             </div><!-- /.ace-settings-container -->
             <iframe id="downloadfile" style="display:none"></iframe>
-            <div class="page-header">
-                <h1>
-                    Danh sách cơ quan ban hành
-                </h1>
-            </div><!-- /.page-header -->
-            <div class="row">
-                <div class="col-xs-12">
-                    <!-- PAGE CONTENT BEGINS -->
-                    <table class="table table-responsive table-bordered" id="grid-table">
-                        <tr>
-                            <th>Mã </th>
-                            <th>Tên </th>
-                            <th>Địa chỉ</th>
-                            <th>Điện thoại</th>
-                            <th>Fax</th>
-                            <th>Email</th>
-                            <th>Ghi chú</th>
-                            <th>Tên viết tắt</th>
-                            <th>Mã cấp CQBH</th>
-                            <th>Thao tác</th>
-                        </tr>
-                        <tr ng-repeat="sp in datagrid">
-                            <td>{{sp.maCQBH}} </td>
-                            <td>{{sp.tenCQBH}} </td>
-                            <td>{{sp.diaChi}} </td>
-                            <td>{{sp.dienThoai}} </td>
-                            <td>{{sp.fax}} </td>
-                            <td>{{sp.email}} </td>
-                            <td>{{sp.ghiChu}} </td>
-                            <td>{{sp.tenVietTat}} </td>
-                            <td>{{sp.maCapCQBH}} </td>
-                            <td>
-                                <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
-                                <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                    </table>
-                    <div>
+            <div style="margin-left:20px; margin-right:20px">
+                <div class="page-header">
+                    <h1>
+                        Danh sách cơ quan ban hành
+                    </h1>
+                </div><!-- /.page-header -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <table class="table table-responsive table-bordered" id="grid-table">
+                            <tr>
+                                <th>Mã </th>
+                                <th>Tên </th>
+                                <th>Địa chỉ</th>
+                                <th>Điện thoại</th>
+                                <th>Fax</th>
+                                <th>Email</th>
+                                <th>Ghi chú</th>
+                                <th>Tên viết tắt</th>
+                                <th>Mã cấp CQBH</th>
+                                <th>Thao tác</th>
+                            </tr>
+                            <tr ng-repeat="sp in datagrid">
+                                <td>{{sp.maCQBH}} </td>
+                                <td>{{sp.tenCQBH}} </td>
+                                <td>{{sp.diaChi}} </td>
+                                <td>{{sp.dienThoai}} </td>
+                                <td>{{sp.fax}} </td>
+                                <td>{{sp.email}} </td>
+                                <td>{{sp.ghiChu}} </td>
+                                <td>{{sp.tenVietTat}} </td>
+                                <td>{{sp.maCapCQBH}} </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-danger btn-sm" ng-click="confirmdelete(sp.id)"> <i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div>
 
-                        <ul uib-pagination total-items="pageCount"
-                            ng-model="currentPage"
-                            class="pagination-sm"
-                            ng-change="pagechaned()"
-                            items-per-page="PageSize"></ul>
-                    </div>
-                    <div id="grid-pager"></div>
-                    <!-- PAGE CONTENT ENDS -->
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.page-content -->
-    </div>
+                            <ul uib-pagination total-items="pageCount"
+                                ng-model="currentPage"
+                                class="pagination-sm"
+                                ng-change="pagechaned()"
+                                items-per-page="PageSize"></ul>
+                        </div>
+                        <div id="grid-pager"></div>
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row --></div>
+            </div><!-- /.page-content -->
+        </div>
 
     @*Modal hển thị*@
     <div class="modal fade" id="confirm-status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
