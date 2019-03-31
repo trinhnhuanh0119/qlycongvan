@@ -11,7 +11,7 @@ namespace QuanLyCongVan.Repository.Object
         public string Dem { get; set; }
         public string Ten { get; set; }
         public string TenVietTat { get; set; }
-        public bool? GioiTinh { get; set; }
+        public int? GioiTinh { get; set; }
         public DateTime? NgaySinh { get; set; }
         public string Anh { get; set; }
         public DateTime? NgayVaoNganh { get; set; }

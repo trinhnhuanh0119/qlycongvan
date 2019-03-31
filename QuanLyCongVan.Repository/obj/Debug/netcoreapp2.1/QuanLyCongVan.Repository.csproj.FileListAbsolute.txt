@@ -40,3 +40,17 @@ C:\Users\Admin\Documents\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\ne
 C:\Users\Admin\Documents\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.csproj.CopyComplete
 C:\Users\Admin\Documents\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.dll
 C:\Users\Admin\Documents\qlycongvan-master\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.pdb
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.dll
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.pdb
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Repository.deps.json
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Repository.dll
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Repository.pdb
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.IRepository.dll
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.dll
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.IRepository.pdb
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\bin\Debug\netcoreapp2.1\QuanLyCongVan.Model.pdb
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.csprojAssemblyReference.cache
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.csproj.CoreCompileInputs.cache
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.AssemblyInfoInputs.cache
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.AssemblyInfo.cs
+E:\qlycongvan.git\trunk\QuanLyCongVan.Repository\obj\Debug\netcoreapp2.1\QuanLyCongVan.Repository.csproj.CopyComplete

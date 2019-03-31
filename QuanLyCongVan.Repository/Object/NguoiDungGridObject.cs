@@ -9,8 +9,7 @@ namespace QuanLyCongVan.Repository.Object
         public int Id { get; set; }
         public string TenTaiKhoan { get; set; }
         public string MatKhau { get; set; }
-        public int KichHoat { get; set; }
+        public string KichHoat { get; set; }
         public string MaNhanSu { get; set; }
-        public string TongSo { get; set; }
     }
 }
