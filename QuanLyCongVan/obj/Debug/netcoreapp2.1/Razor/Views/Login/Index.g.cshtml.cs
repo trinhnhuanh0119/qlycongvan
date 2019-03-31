@@ -53,7 +53,7 @@ namespace AspNetCore
             WriteLiteral("\n<!DOCTYPE html>\n<html lang=\"en\">\n");
             EndContext();
             BeginContext(59, 1199, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52839233f8cb4063b5c5bae9eda1ef69", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2272b00593eb42eb83f7f600ab2e98b7", async() => {
                 BeginContext(65, 1186, true);
                 WriteLiteral(@"
     <meta http-equiv=""X-UA-Compatible"" content=""IE=edge,chrome=1"" />
@@ -100,7 +100,7 @@ namespace AspNetCore
             WriteLiteral("\n\n");
             EndContext();
             BeginContext(1260, 6178, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a50da677d91f4af29ca48f29180c551c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88ea71d78cb84a4fb36c345c7b776524", async() => {
                 BeginContext(1287, 6144, true);
                 WriteLiteral(@"
     <div class=""main-container"">
