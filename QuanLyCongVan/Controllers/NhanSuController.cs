@@ -33,8 +33,8 @@ namespace QuanLyCongVan.Controllers
             try
             {
                 NhanSu nhanSu = new NhanSu();
-                nhanSu.DiaChiCq = c.diaChiCq;
-                nhanSu.DiaChiNr = c.diaChiNr;
+                nhanSu.DiaChiCQ = c.diaChiCq;
+                nhanSu.DiaChiNR = c.diaChiNr;
                 nhanSu.DienThoai = c.dienThoai;
                 if (c.gioiTinh != null)
                 {
@@ -138,7 +138,7 @@ namespace QuanLyCongVan.Controllers
                 var data = ob.GetAll();
                 foreach (NhanSu item in data)
                 {
-                    dt.Rows.Add(item.MaNhanSu, item.Ten, item.GioiTinh,Convert.ToDateTime(item.NgaySinh), item.DiaChiNr, item.DiaChiCq, item.DienThoai, item.MaPhong);
+                    dt.Rows.Add(item.MaNhanSu, item.Ten, item.GioiTinh,Convert.ToDateTime(item.NgaySinh), item.DiaChiNR, item.DiaChiCQ, item.DienThoai, item.MaPhong);
                 }
                 string filename = "DanhSachNhanSu" + DateTime.Now.Day + "-" + DateTime.Now.Month + "-" + DateTime.Now.Year + ".xlsx";
                 string folderName = "/assets/Excel/";
