@@ -1,11 +1,9 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_Layout.cshtml";
 }
-
-<script src="~/ScriptController/AddCongVanScriptController.js"></script>
-<div class="main-container ace-save-state" id="main-container" ng-controller="AddCongVanJS">
+<script src="~/ScriptController/PhongBanScriptController.js"></script>
+<div class="main-container ace-save-state" id="main-container" ng-controller="PhongBanJS">
     <div class="main-content">
         <div class="main-content-inner">
             <div class="breadcrumbs ace-save-state" id="breadcrumbs">
@@ -30,94 +28,88 @@
                     <button class="btn btn-sm btn-success" ng-click="show()">Thêm mới</button>
                     <!-- /.ace-settings-box -->
                 </div><!-- /.ace-settings-container -->
-                <div style="margin-left:20px; margin-right:20px">
-                    <div class="page-header">
-                        <h1>
-                            Thêm mới công văn
-                        </h1>
-                    </div><!-- /.page-header -->
-                    <div class="row">
-                        <div>
-                            <div class="widget-box">
-                                <div class="widget-header">
-                                    <h4 class="smaller">Danh sách công văn</h4>
-                                </div>
-                                <div class="widget-body">
-                                    <div class="widget-main">
-                                        <table class="table table-responsive table-bordered" id="grid-table">
-                                            <tr>
-                                                <th>Số công văn</th>
-                                                <th>Loại công văn</th>
-                                                <th>Cơ quan ban hành</th>
-                                                <th>Trích yếu</th>
-                                                <th>Nơi lưu</th>
-                                            </tr>
-                                            <tr ng-repeat="sp in datagrid"></tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="page-header">
+                    <h1>
+                        Danh sách công văn
+                    </h1>
+                </div><!-- /.page-header -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <table class="table table-responsive table-bordered" id="grid-table">
+                            <tr>
+                                <th>Số công văn</th>
+                                <th>Loại công văn</th>
+                                <th>Cơ quan ban hành</th>
+                                <th>Trích yếu</th>
+                                <th>Nơi lưu</th>
+                                <th>Đính kèm</th>
+                            </tr>
+                            <tr ng-repeat="sp in datagrid">
+                                <td>{{sp.SoVB}} </td>
+                                <td>{{sp.TenLoaiVB}} </td>
+                                <td>{{sp.TenCapCQBH}} </td>
+                                <td>{{sp.TrichYeu}} </td>
+                                <td>{{sp.NoiLuu}}</td>
+                                <td>{{sp.FileDinhKem}} </td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" ng-click="onEdit(sp.id)"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-danger btn-sm" ng-click="onDelete(sp.id)"> <i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div id="grid-pager"></div>
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
             </div><!-- /.page-content -->
         </div>
     </div>
 
-    <!--Modal hển thị-->
+    @*Modal hển thị*@
     <div class="modal fade" id="confirm-status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm dv-modal" style="width:60%">
             <div class="modal-content modal-xoa">
                 <div class="tab-content tab-content_xoa">
                     <div class="modal-header no-padding widget-header-small">
                         <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Thêm mới Công Văn</h4>
+                        <h4 class="modal-title">Thêm mới công văn</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Số công văn:</label>
+                            <label class="col-sm-3 control-label no-padding-right text-right">Số Công Văn:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.soVb" />
+                                <input type="text" class="form-control" ng-model="model.SoVB" />
                             </div>
-                        </div><br>
+                        </div>
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Loại công văn:</label>
+                            <label class="col-sm-3 control-label no-padding-right text-right">Tên Loại Văn Bản:</label>
                             <div class="col-sm-9">
-                                <select class="form-control" ng-model="model.loaiVb">
-                                    <option ng-repeat="sp in listLoaiVanBan" value="{{sp.id}}">{{sp.tenLoaiVB}}</option>
-                                </select>
+                                <input type="text" class="form-control" ng-model="model.TenLoaiVB" />
                             </div>
-                        </div><br>
+                        </div>
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Cơ quan ban hành:</label>
+                            <label class="col-sm-3 control-label no-padding-right text-right">Cấp Cơ Quan Ban Hành:</label>
                             <div class="col-sm-9">
-                                <select class="form-control" ng-model="model.maCqbh">
-                                    <option ng-repeat="sp in listCqbh" value="{{sp.id}}">
-                                        {{sp.tenCQBH}}
-                                    </option>
-                                </select>
+                                <input type="text" class="form-control" ng-model="model.TenCapCQBH" />
                             </div>
-                        </div><br>
+                        </div>
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Trích yếu:</label>
+                            <label class="col-sm-3 control-label no-padding-right text-right">Trích Yếu:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.trichYeu" />
+                                <input type="text" class="form-control" ng-model="model.TrichYeu" />
                             </div>
-                        </div><br>
+                        </div>
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Nơi Lưu:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.noiNhan" />
+                                <input type="text" class="form-control" ng-model="model.NoiLuu" />
                             </div>
-                        </div><br>
+                        </div>
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Đính kèm:</label>
-                            <div class="form-group">
-                                <div class="col-sm-9">
-                                    <form action="" method="POST" role="form">
-                                        <input type="file" id="id-input-file-2">
-                                        </form>
-                                </div>
+                            <label class="col-sm-3 control-label no-padding-right text-right">File Đính Kèm:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" ng-model="model.FileDinhKem" />
                             </div>
                         </div>
                     </div>
@@ -128,44 +120,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="modal fade" id="notifycal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm dv-modal" style="width:60%">
-            <div class="modal-content modal-xoa">
-                <div class="tab-content tab-content_xoa">
-                    <div class="modal-header no-padding widget-header-small">
-                        <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Xóa Thông Tin</h4>
-                    </div>
-                    <div>
-                        <p>Bạn chắc chắn muốn xóa thông tin này?</p>
-                    </div>
-                    <div class="modal-footer no-border">
-                        <a class="btn btn-success btn-xs btn-ok" ng-click="onDelete(idremove)"><i class="fa fa-check-square-o"></i> Đồng ý</a>
-                        <a class="btn btn-xs btn-danger" data-dismiss="modal"><i class="fa fa-times-circle"></i> Không</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        jQuery(function ($) {
-            $('#id-input-file-2').ace_file_input({
-                no_file: 'No File ...',
-                btn_choose: 'Choose',
-                btn_change: 'Change',
-                droppable: false,
-                onchange: null,
-                thumbnail: false //| true | large
-                //whitelist:'gif|png|jpg|jpeg'
-                //blacklist:'exe|php'
-                //onchange:''
-                //
-            });
-        })
-    </script>
+    </div><!-- /.main-content -->
 </div>
-
-
 
