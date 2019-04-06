@@ -28,5 +28,14 @@ namespace QuanLyCongVan.Repository
             }
 
         }
+        public List<DropDownLVBObject> GetDropDowns()
+        {
+            using (IDbConnection db = new SqlConnection(Connections.Connection))
+            {
+                DynamicParameters parameters = new DynamicParameters();
+                var list = db.Query<DropDownLVBObject>("DropLvb", parameters, null, true, null, CommandType.StoredProcedure).AsList<DropDownLVBObject>();
+                return list;
+            }
+        }
     }
 }
