@@ -62,7 +62,6 @@ namespace QuanLyCongVan.Controllers
             return Json(loaivanbanRepo.GetAll(request));
         }
 
-
         [HttpPost]
         public ActionResult Update([FromBody]LoaiVanBan c)
         {
@@ -79,11 +78,6 @@ namespace QuanLyCongVan.Controllers
                 ModelState.AddModelError(string.Empty, ex.Message);
             }
             return View(c);
-        }
-        [HttpGet]
-        public ActionResult GetDropDowns()
-        {
-            return Json(loaivanbanRepo.GetDropDowns());
         }
     }
 }

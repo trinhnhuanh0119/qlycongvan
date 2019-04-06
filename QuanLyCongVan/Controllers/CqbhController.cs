@@ -86,11 +86,7 @@ namespace QuanLyCongVan.Controllers
             }
             return View(c);
         }
-        [HttpGet]
-        public ActionResult GetDropDowns()
-        {
-            return Json(cqbhRepo.GetDropDowns());
-        }
+
         [HttpPost]
         public ActionResult ExportExcel()
         {
