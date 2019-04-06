@@ -3,7 +3,6 @@
     Layout = "~/Views/_Layout.cshtml";
 }
 
-
 <script src="~/ScriptController/CqbhScriptController.js"></script>
 <div class="main-container ace-save-state" id="main-container" ng-controller="CqbhJS">
     <div class="main-content">
@@ -81,9 +80,10 @@
                         <div id="grid-pager"></div>
                         <!-- PAGE CONTENT ENDS -->
                     </div><!-- /.col -->
-                </div><!-- /.row --></div>
-            </div><!-- /.page-content -->
-        </div>
+                </div><!-- /.row -->
+            </div>
+        </div><!-- /.page-content -->
+    </div>
 
     @*Modal hển thị*@
     <div class="modal fade" id="confirm-status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -146,9 +146,11 @@
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã cấp cơ quan:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.maCapCqbh" />
+                                <select class="form-control" ng-model="model.maCapCQBH">
+                                    <option ng-repeat="sp in listCCQBH" value="{{sp.id}}">{{sp.text}}</option>
+                                </select>
                             </div>
-                        </div><br>
+                        </div>
                     </div>
                     <div class="modal-footer no-border">
                         <a class="btn btn-success btn-xs btn-ok" ng-click="onCreate()"><i class="fa fa-check-square-o"></i> Lưu</a>
@@ -166,7 +168,7 @@
                         <button type="button" class="close btn-close-modal" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Xóa Thông Tin</h4>
                     </div>
-                    <div>
+                    <div style="font-size:15px">
                         <p>Bạn chắc chắn muốn xóa thông tin này?</p>
                     </div>
                     <div class="modal-footer no-border">

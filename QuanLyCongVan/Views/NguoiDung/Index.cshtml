@@ -45,14 +45,12 @@
                         <table class="table table-responsive table-bordered" id="grid-table">
                             <tr>
                                 <th>Tên tài khoản</th>
-                                <th>Mật khẩu</th>
                                 <th>Kích hoạt</th>
                                 <th>Mã nhân sự</th>
                                 <th>Thao tác</th>
                             </tr>
                             <tr ng-repeat="sp in datagrid">
                                 <td>{{sp.tenTaiKhoan}} </td>
-                                <td>{{sp.matKhau}} </td>
                                 <td>{{sp.kichHoat}} </td>
                                 <td>{{sp.maNhanSu}} </td>
                                 <td>
@@ -93,24 +91,26 @@
                             </div>
                         </div><br>
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">mật khẩu:</label>
+                            <label class="col-sm-3 control-label no-padding-right text-right">Mật khẩu:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.matKhau" />
+                                <input type="password" class="form-control" ng-model="model.matKhau" />
                             </div>
                         </div><br>
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">kích hoạt:</label>
-                            <div class="col-sm-3">
-                                <input type="radio" name="gender" value="kichhoat" ng-model="model.kichHoat" /> Kích Hoạt
+                            <label class="col-sm-3 control-label no-padding-right text-right">Kích hoạt:</label>
+                            <div class="col-sm-3" style="font-size:15px">
+                                <input type="radio" name="gender" value="1" ng-model="model.kichHoat" /> Kích Hoạt
                             </div>
-                            <div class="col-sm-3">
-                                <input type="radio" name="gender" value="bokichhoat" ng-model="model.kichHoat" /> Bỏ Kích Hoạt
+                            <div class="col-sm-3" style="font-size:15px">
+                                <input type="radio" name="gender" value="0" ng-model="model.kichHoat" /> Bỏ Kích Hoạt
                             </div>
                         </div><br>
                         <div class="row">
                             <label class="col-sm-3 control-label no-padding-right text-right">Mã nhân sự:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.maNhanSu" />
+                                <select class="form-control" ng-model="model.maNhanSu">
+                                    <option ng-repeat="sp in listNS" value="{{sp.id}}">{{sp.text}}</option>
+                                </select>
                             </div>
                         </div><br>
                     </div>

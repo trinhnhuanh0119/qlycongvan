@@ -75,25 +75,31 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Số Công Văn:</label>
+                            <label class="col-sm-3 control-label no-padding-right text-right">Số công văn:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.soVb" />
                             </div>
                         </div><br>
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Loại Công Văn:</label>
+                            <label class="col-sm-3 control-label no-padding-right text-right">Loại công văn:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" ng-model="model.maLoaiVb" />
+                                <select class="form-control" ng-model="model.loaiVb">
+                                    <option ng-repeat="sp in listLoaiVanBan" value="{{sp.id}}">{{sp.tenLoaiVB}}</option>
+                                </select>
                             </div>
                         </div><br>
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Cơ Quan Ban Hành:</label>
-                            <div class="col-sm-3" style="font-size:15px">
-                                <input type="text" class="form-control" ng-model="model.maCqbh" />
+                            <label class="col-sm-3 control-label no-padding-right text-right">Cơ quan ban hành:</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" ng-model="model.maCqbh">
+                                    <option ng-repeat="sp in listCqbh" value="{{sp.id}}">
+                                        {{sp.tenCQBH}}
+                                    </option>
+                                </select>
                             </div>
                         </div><br>
                         <div class="row">
-                            <label class="col-sm-3 control-label no-padding-right text-right">Trích Yếu:</label>
+                            <label class="col-sm-3 control-label no-padding-right text-right">Trích yếu:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.trichYeu" />
                             </div>
@@ -102,6 +108,16 @@
                             <label class="col-sm-3 control-label no-padding-right text-right">Nơi Lưu:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" ng-model="model.noiNhan" />
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <label class="col-sm-3 control-label no-padding-right text-right">Đính kèm:</label>
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <form action="" method="POST" role="form">
+                                        <input type="file" id="id-input-file-2">
+                                        </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -133,6 +149,22 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $('#id-input-file-2').ace_file_input({
+                no_file: 'No File ...',
+                btn_choose: 'Choose',
+                btn_change: 'Change',
+                droppable: false,
+                onchange: null,
+                thumbnail: false //| true | large
+                //whitelist:'gif|png|jpg|jpeg'
+                //blacklist:'exe|php'
+                //onchange:''
+                //
+            });
+        })
+    </script>
 </div>
 
 
