@@ -105,7 +105,7 @@
         ngInit();
 
         $scope.onCreate = function () {
-            if ($scope.model.id == '' || $scope.model.id == null || $scope.model.id == 0) {
+            if ($scope.model.id === '' || $scope.model.id === null || $scope.model.id === 0) {
                 //$http({
                 //    method: 'POST',
                 //    url: '/NhanSu/Create',
